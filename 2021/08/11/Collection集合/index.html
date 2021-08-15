@@ -497,6 +497,22 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for（数据类型 变量名：集合名/数组名）&#123;</span><br><span class="line">    sout（变量名）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>变量名对应的就是集合或数组中的数据<br>如</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();;</span><br><span class="line">list.add(&quot;aaa&quot;);</span><br><span class="line">list.add(&quot;bbb&quot;);</span><br><span class="line">list.add(&quot;ccc&quot;);</span><br><span class="line">list.add(&quot;ddd&quot;);</span><br><span class="line">for (String i:list) &#123;</span><br><span class="line">    System.out.println(i)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><p>详见ArrayList<br>ArrayList 查询快，增删慢，底部是Array数组</p>
+<p>LinkedList增删快。查询慢，底部是链表，有很多的首尾元素操作方法</p>
+<h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><p>set集合的特点</p>
+<ul>
+<li>不允许存储重复的元素</li>
+<li>没有索引，也不能使用普通的for循环进行遍历</li>
+</ul>
+<p>HashSet继承set</p>
+<ul>
+<li>是一个无序的集合，存储元素和取出元素的顺序有可能不一致</li>
+<li>底层是一个哈希表，哈希表：数组 + 链表/红黑树</li>
+</ul>
+<p>如果HashSet存储自定义类型元素（如Student类），想要元素不重复，必须重写hashcode和equals方法</p>
+<p>LinkedHashSet 集合不允许重复，但是保证元素有序</p>
+
                 
             </div>
             <hr/>
