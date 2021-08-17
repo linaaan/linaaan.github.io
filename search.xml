@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Map</title>
+      <link href="/2021/08/17/Map/"/>
+      <url>/2021/08/17/Map/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Map的基本内容"><a href="#Map的基本内容" class="headerlink" title="Map的基本内容"></a>Map的基本内容</h1><p> Map集合是一个双列集合，一个元素包含两个值（key，value）</p><ul><li>key和value的数据类型可以相同，也可以不同</li><li>key不允许重复，value可以重复</li><li>key和value是一一对应的</li><li>HashMap很快，但无序，继承Map方法</li></ul><h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ul><li>get（key）=&gt;value 根据key值获得value。。。</li><li>put（key, value）=&gt;value 存储进map中，若key不重复返回空，若重复返回被替换的value</li><li>remove（key）=&gt;value 移除key，返回value值</li><li>containkey（key）=&gt;booolean 是否含有这个key</li></ul><h1 id="特殊方法"><a href="#特殊方法" class="headerlink" title="特殊方法"></a>特殊方法</h1><ul><li>keyset（）<br>将Map的key全部返回到一个set中，可以利用set的特点遍历key获取value</li><li>entrySet（）<br>将map的entry对象取出存储到set中，（entry对象就是键值对的映射关系，类似于结婚证），<br>entry对象有getKey()和getValue()方法，可以在遍历中使用</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>可变参数方法</title>
+      <link href="/2021/08/15/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/"/>
+      <url>/2021/08/15/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><p>当方法的参数列表数据类型已经确定，但个数不确定时，可以使用可变参数</p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>修饰符 返回值类型 方法名（数据类型…变量名）{}<br>这个变量实际上是一个数组</p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ul><li>一个参数列表只能由一种类型的可变参数，不可以（int…..a, String….b）</li><li>若有多种数据类型，可变参数要放在最后一个 （int a， string b， int…c）</li></ul><h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class KeBian &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int add = method(1,3,4,5,8,9);</span><br><span class="line">        System.out.println(add);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static int method(int...ints) &#123;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for (int anInt : ints) &#123;</span><br><span class="line">            sum += anInt;</span><br><span class="line">        &#125;</span><br><span class="line">        return sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>新电脑第一次博客测试</title>
+      <link href="/2021/08/13/%E6%96%B0%E7%94%B5%E8%84%91%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/"/>
+      <url>/2021/08/13/%E6%96%B0%E7%94%B5%E8%84%91%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%9A%E5%AE%A2%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p>歪日，YOGA14S轻薄本可真好用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>泛型</title>
+      <link href="/2021/08/11/%E6%B3%9B%E5%9E%8B/"/>
+      <url>/2021/08/11/%E6%B3%9B%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><img style="width:1000px" src="https://z3.ax1x.com/2021/08/11/fa3zsf.jpg"> <p>具体需要什么类型的数据不知道，就使用泛型定义<br>使用泛型</p><ul><li>避免了类型转换的麻烦，存储的是什么类型取出的就是什么类型</li><li>但泛型是什么类型就只能存储什么类型的数据</li></ul><p>不使用泛型</p><ul><li>可以存储任意类型的数据,但不安全会引发异常<br>如 Arraylist list = new Arraylist()</li></ul><h1 id="泛型类的定义"><a href="#泛型类的定义" class="headerlink" title="泛型类的定义"></a>泛型类的定义</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class GenericClass&lt;E&gt; &#123;</span><br><span class="line">    private E name;</span><br><span class="line"></span><br><span class="line">    public E getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(E name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo02Generic &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        GenericClass gc = new GenericClass();</span><br><span class="line">        gc.setName(&quot;Object name&quot;);</span><br><span class="line">        Object name = gc.getName();</span><br><span class="line">        System.out.println(name);</span><br><span class="line"></span><br><span class="line">        GenericClass gc1 = new GenericClass();</span><br><span class="line">        gc1.setName(2);</span><br><span class="line">        Object name1 = gc1.getName();</span><br><span class="line">        System.out.println(name1);</span><br><span class="line"></span><br><span class="line">        GenericClass&lt;Integer&gt; gc2 = new GenericClass&lt;&gt;();</span><br><span class="line">        gc2.setName(4);</span><br><span class="line">        Integer name2 = gc2.getName();</span><br><span class="line">        System.out.println(name2);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="泛型接口的定义"><a href="#泛型接口的定义" class="headerlink" title="泛型接口的定义"></a>泛型接口的定义</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public interface GenericInterface &lt;E&gt;&#123;</span><br><span class="line">    public abstract void method(E e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class GenericInterfaceImp2&lt;E&gt; implements GenericInterface&lt;E&gt;&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void method(E e) &#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class GenericInterfaceImpl1 implements GenericInterface&lt;String&gt;&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void method(String s) &#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h1 id="泛型方法定义"><a href="#泛型方法定义" class="headerlink" title="泛型方法定义"></a>泛型方法定义</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public class GenericMethod &#123;</span><br><span class="line">    public &lt;E&gt; void method01(E e)&#123;</span><br><span class="line">        System.out.println(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class Demo02Generic &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">        GenericMethod gm = new GenericMethod();</span><br><span class="line">        gm.method01(1);</span><br><span class="line">        gm.method01(&quot;Hello&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="泛型的通配符"><a href="#泛型的通配符" class="headerlink" title="泛型的通配符"></a>泛型的通配符</h1><p>泛型的通配符 ?  代表任意的数据类型<br>食用方法</p><ul><li>不能创建对象使用，只能作为<strong>方法的参数</strong>使用</li><li>? extends E       ?对应的类必须是E或者是E的子类</li><li>? super E         ?对应的类必须是E或者是E的父类</li></ul><p> 简单用法<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"> public class Demo03Generic &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        ArrayList&lt;String&gt; list1 = new ArrayList&lt;&gt;();</span><br><span class="line">        list1.add(&quot;a&quot;);</span><br><span class="line">        list1.add(&quot;b&quot;);</span><br><span class="line">        ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();</span><br><span class="line">        list2.add(1);</span><br><span class="line">        list2.add(2);</span><br><span class="line">        method(list1);</span><br><span class="line">        method(list2);</span><br><span class="line">        // ArrayList&lt;?&gt; list3 = .......错误</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void method(ArrayList&lt;?&gt; list) &#123;</span><br><span class="line">        Iterator&lt;?&gt; iterator = list.iterator();</span><br><span class="line">        while (iterator.hasNext())&#123;</span><br><span class="line">            Object next = iterator.next();</span><br><span class="line">            System.out.println(next);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Collection集合</title>
+      <link href="/2021/08/11/Collection%E9%9B%86%E5%90%88/"/>
+      <url>/2021/08/11/Collection%E9%9B%86%E5%90%88/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><img style="width:1000px" src="https://z3.ax1x.com/2021/08/11/faQAKS.jpg"> <p>Collection 是所有单列集合最顶层的接口（Map是双列接口），里面定义了所有单列集合的共性方法</p><h1 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h1><ul><li><code>boolean add(E e) </code>添加元素</li><li><code>boolean remove(Object o)</code> 从集合中移除指定的元素</li><li><code>void clear()</code> 清空集合中的元素</li><li><code>boolean contains(Object o)</code> 判断集合中是否存在指定的元素</li><li><code>boolean isEmpty()</code> 判断集合是否为空</li><li><code>int size()</code>集合的长度，也就是集合中元素的个数</li></ul><h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><p>迭代器是Collection集合中元素的通用获取方式，是一个接口</p><ul><li><code>hasNext()</code> 判断有没有下一个元素可以迭代</li><li><code>next（）</code> 返回迭代的下一个元素</li><li><code>iterator()</code> 返回迭代器的实现类（接口无法直接使用）</li></ul><p>步骤</p><ol><li>iterator()获取实现类</li><li>hasNext()判断</li><li>next（）取出<br>如<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; co = new ArrayList&lt;&gt;();</span><br><span class="line">co.add(&quot;Hello&quot;);</span><br><span class="line">co.add(&quot;en&quot;);</span><br><span class="line">co.add(&quot;ok&quot;);</span><br><span class="line">Iterator&lt;String&gt; it = co.iterator();</span><br><span class="line">// 多态  接口            实现类对象</span><br><span class="line">// 获取实现类对象并把指针指向集合的-1索引</span><br><span class="line">while (it.hasNext())&#123;</span><br><span class="line">    System.out.println(it.next());</span><br><span class="line">    // 取出下一个元素并且指针向后移动一位</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h1 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h1><p>增强for循环本质也是一种迭代器，使用for循环格式简化了迭代器的书写,所有的单列集合都可以使用增强for<br>格式：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for（数据类型 变量名：集合名/数组名）&#123;</span><br><span class="line">    sout（变量名）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>变量名对应的就是集合或数组中的数据<br>如</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();;</span><br><span class="line">list.add(&quot;aaa&quot;);</span><br><span class="line">list.add(&quot;bbb&quot;);</span><br><span class="line">list.add(&quot;ccc&quot;);</span><br><span class="line">list.add(&quot;ddd&quot;);</span><br><span class="line">for (String i:list) &#123;</span><br><span class="line">    System.out.println(i)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h1 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h1><p>详见ArrayList<br>ArrayList 查询快，增删慢，底部是Array数组</p><p>LinkedList增删快。查询慢，底部是链表，有很多的首尾元素操作方法</p><h1 id="Set集合"><a href="#Set集合" class="headerlink" title="Set集合"></a>Set集合</h1><p>set集合的特点</p><ul><li>不允许存储重复的元素</li><li>没有索引，也不能使用普通的for循环进行遍历</li></ul><p>HashSet继承set</p><ul><li>是一个无序的集合，存储元素和取出元素的顺序有可能不一致</li><li>底层是一个哈希表，哈希表：数组 + 链表/红黑树</li></ul><p>如果HashSet存储自定义类型元素（如Student类），想要元素不重复，必须重写hashcode和equals方法</p><p>LinkedHashSet 集合不允许重复，但是保证元素有序</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>字符串</title>
+      <link href="/2021/08/07/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+      <url>/2021/08/07/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><p>字符串String是常量；它们的值在创建之后不能更改。字符串缓冲区StringBuilder支持可变的字符串<br>字符串本身就是一个对象，可以<code>str.methods()</code></p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>==是进行字符串的地址值比较，内容的比较是 <code>str1.equals(str2)</code>，但是str1不可以是空值，因为空值没有方法</p><h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ul><li><code>str.length()</code> 获取长度</li><li><code>str1.concat(str2) </code>将1和2拼接并返回</li><li><code>str.charAt(0)</code> 返回字符串的第一个字符</li><li><code>str.indexOf（a）</code>返回字符串第一个参数字符串a首次出现的索引位置，没有返回-1</li><li><code>str.substring(index)</code> 从参数位置一直截取到字符串末尾</li><li><code>str.substring(begin, end)</code> 从begin一直截取到end [begin, end)</li><li><code>str.toCharArray()</code> 将字符串转换为数组并返回</li><li><code>str.getBytes()</code> 获得当前字符串的底层字节数组 a==&gt;97，并返回</li><li><code>str.replace(oldString, newString)</code> 返回一个新的字符串，用new的部分替换old的部分</li><li><code>&quot;a,b,c&quot;.split(&quot;,&quot;)</code>  -&gt; <code>&#123;&quot;a&quot;,&quot;b&quot;,&quot;c&quot;&#125;</code> 将字符串按照规定进行拆分<br>若原字符串想要根据”.”进行拆分，因为”.”是转义字符，必须写成<code>split(&quot;\\.&quot;)</code></li></ul><h1 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h1><p>StringBuilder字符串缓冲区，可以对字符串进行操作，提高字符串的效率</p><ul><li><code>StringBuilder()</code> 构造一个空的字符串生成器，初始容量16个字符</li><li><code>StringBuilder(Str)</code> 构造一个字符串生成器，初始化为指定的字符串内容 <strong>字符串-&gt;字符串生成器</strong></li></ul><p>常用方法</p><ul><li><code>bu1.append()</code> 向后添加字符串，不必接收返回值，直接反映在bu1中<br>可以<code>bu1.append().append().append()</code></li><li><code>bu.toString()</code> <strong>字符串生成器-&gt;字符串</strong></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内部类</title>
+      <link href="/2021/08/07/%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+      <url>/2021/08/07/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><p>一个类内部包含另一个类，就像身体和心脏的关系<br>分类</p><ol><li>成员内部类</li><li>局部内部类（包含匿名内部类）</li></ol><h1 id="成员内部类"><a href="#成员内部类" class="headerlink" title="成员内部类"></a>成员内部类</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class 外部类名称&#123;</span><br><span class="line">     修饰符 class 内部类名称&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>注意:</p><ol><li>内用外，随意访问；外用内，需要内部类对象</li><li>主函数调用内部类函数<br><code>外部类名称.内部类名称 对象名 = new 外部类名称（）.new 内部类名称（）</code></li><li>内部类调用外部类的重名变量<br><code>外部类名称.this.变量名</code></li></ol><h1 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h1><p>一个类是定义在一个方法内部，只有当前这个方法才能用</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">修饰符 class 外部类名称&#123;</span><br><span class="line">     修饰符 返回值类型 外部类方法名称（）&#123;</span><br><span class="line">         class 局部内部类名称&#123;&#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>局部内部类如果希望访问所在方法的局部变量，那这个局部变量必须是有效final的</p><h1 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h1><p>如果接口的实现类或者是父类的子类只需要使用<strong>唯一一次</strong>,那么这种情况下就可以省略掉该类的定义。而使用匿名内部类(较为重要)<br>定义</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接口名称 对象名 = new 接口名称（）&#123;</span><br><span class="line">     覆盖重写所有的抽象方法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>继承</title>
+      <link href="/2021/08/02/%E7%BB%A7%E6%89%BF/"/>
+      <url>/2021/08/02/%E7%BB%A7%E6%89%BF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><ol><li>定义父类的格式 （一个普通的类定义）<ul><li>public class 父类名称{}</li></ul></li><li>定义子类的格式<ul><li>public class 子类名称 <strong>extends</strong> 父类名称{}</li><li>继承时访问重名的成员变量/方法，优先使用最近的对象的，没有再往上找父类，绝不会往下找子类</li></ul></li></ol><h1 id="方法覆盖重写"><a href="#方法覆盖重写" class="headerlink" title="方法覆盖重写"></a>方法覆盖重写</h1><p>在子类对父类的方法进行重写，尽量不要修改父类</p><ol><li>保证父类子类方法名称相同，参数列表也相同</li><li>子类方法的权限必须大于等于父类方法的权限修饰符</li><li>public &gt; protected &gt; ( default ) &gt; private<table><thead><tr><th align="center">类型</th><th align="center">public</th><th align="center">protected</th><th align="center">( default )</th><th align="center">private</th></tr></thead><tbody><tr><td align="center">同一个类</td><td align="center">yes</td><td align="center">yes</td><td align="center">yes</td><td align="center">yes</td></tr><tr><td align="center">同一个包</td><td align="center">yes</td><td align="center">yes</td><td align="center">yes</td><td align="center">no</td></tr><tr><td align="center">不同包子类（继承关系）</td><td align="center">yes</td><td align="center">yes</td><td align="center">no</td><td align="center">no</td></tr><tr><td align="center">不同包非子类（非继承关系）</td><td align="center">yes</td><td align="center">no</td><td align="center">no</td><td align="center">no</td></tr></tbody></table></li></ol><h1 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h1><p>加上abstract关键字，然后去掉大括号，代表一种行为，但具体怎么做不确定<br><code> public abstract void method();</code><br>例如父类定义一个动物吃东西的抽象方法，在子类分成狗和猫对这个抽象方法分别进行具体的描述<br><strong>抽象方法所在的类必须是抽象类</strong>，在class前写上abstract</p><ul><li>不能直接使用new抽象类对象</li><li>必须用一个子类继承抽象父类</li><li>子类必须覆盖重写抽象父类<strong>所有</strong>的抽象方法</li><li>创建子类对象进行使用</li></ul><h1 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h1><ol><li><p>对于局部变量 name</p><ul><li>使用本类的成员变量 this.name</li><li>使用父类的成员变量 super.name<br>同理成员方法</li></ul></li><li><p>调用父类的成员方法 super.method();<br>调用父类的构造方法 super()<br>super调用父类的函数，省去重复代码</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>接口</title>
+      <link href="/2021/08/02/%E6%8E%A5%E5%8F%A3/"/>
+      <url>/2021/08/02/%E6%8E%A5%E5%8F%A3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><p>接口就是一种公共的规范标准，只要符合标准，就可以大家共用 （插电接口）</p><h1 id="接口的实现"><a href="#接口的实现" class="headerlink" title="接口的实现"></a>接口的实现</h1><p> 一个接口Interface的格式:  public <strong>interface</strong> 接口名称{}</p><ul><li>接口可以有抽象方法，默认方法，静态方法，私有方法</li><li>接口不能直接使用，必须有一个实现类来实现该接口</li></ul><h1 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h1><p>接口定义”成员变量“ 从效果上看就是接口的常量<br>格式: <code>public static final 数据类型 变量名称</code></p><ul><li>一旦使用final说明不可改变</li><li>可以省略 public static final。但不写效果相同</li><li>接口常量必须进行赋值,且常量的名称使用完全大写的字母，用下划线进行分割(推荐命名)</li></ul><h1 id="接口的使用"><a href="#接口的使用" class="headerlink" title="接口的使用"></a>接口的使用</h1><p><code>public class 实现类名称 implements 接口名称&#123;&#125;</code></p><h2 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h2><p>接口的所有抽象方法必须覆盖重写，可以B实现A的一部分抽象方法，接着C实现B剩下的抽象方法，此时A和B都是抽象的</p><h2 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h2><p>默认方法的定义 <code>public default void 默认方法名称()&#123;&#125;</code><br>接口添加默认方法，实现类不会报错，但添加抽象方法会出现报错</p><h2 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h2><p>default换成static<br>不能通过<strong>接口实现类的对象</strong>来调用接口当中的静态方法<br>正确用法: 接口名称.静态方法</p><h2 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h2><p> private方法只有接口自己可以调用，不能被实现类或别人调用</p><ul><li>private 方法名称(){}</li><li>private static 名字(){}</li></ul><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol><li>一个类的父类唯一，但接口不唯一</li><li>一个类如果父类的方法和接口中的默认方法产生了冲突，优先使用父类当中的方法<br><code>public class Zi extends Fu implements Interface&#123;&#125;</code></li><li>接口是多继承的(extends) <code>public interface MyInterfaceC extends MyInterfaceA,MyInterfaceB</code><br> 若多继承的父类出现重名的默认函数，一定要进行覆写override</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多态</title>
+      <link href="/2021/08/02/%E5%A4%9A%E6%80%81/"/>
+      <url>/2021/08/02/%E5%A4%9A%E6%80%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><p>多态 保证等号左边不会变动<br>小明这个对象，既有学生形态，又是人类形态。一个对象拥有多种形态，就是对象的多态性<br>体现多态性 父类引用指向子类对象</p><h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><ol><li>父类名称 对象名 = new 子类名称（）</li><li>接口名称 对象名 = new 实现类名称（）</li></ol><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><blockquote><ol><li>调用成员变量<blockquote><ul><li>直接通过对象名称访问成员变量，等号左边是谁就优先用谁，没有则向上找</li><li>间接通过成员方法访问成员变量，该方法属于谁就优先用谁，没有则向上找</li></ul></blockquote></li><li>成员方法的访问规则<blockquote><ul><li>看new的是谁就优先用谁，没有则向上找</li><li>编译看左边，运行看右边（编译的时候，该方法父类必须有，运行的时候优先用子类）<blockquote><ul><li>父子都有，优先用子</li><li>子类没有，父类有，向上找到父类</li><li>子类有，父类没有，报错，因为编译时父类没有该方法<br>为调用子类方法需要向下转型： 子类 子类对象名 = （子类） 父类对象名    instanceof用法</li></ul></blockquote></li></ul></blockquote></li></ol></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>ArrayList集合</title>
+      <link href="/2021/07/26/ArrayList/"/>
+      <url>/2021/07/26/ArrayList/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><p>ArrayList是一个类，这个类建立的Array没有固定的大小限制，可以在程序运行中不断地添加元素</p><h1 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h1><p> 如 <code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;()</code></p><h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><p><code>list.add(abc)</code>   往list末尾添加元素abc<br><code>list.get(0)</code>     获取list第一个位置的元素<br><code>list.remove(0)</code>  删除list第一个位置的元素，并返回这个元素的值<br><code>list.size()</code>     返回list的长度</p><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>ArrayList 的泛型只能是引用类型（如String），不能是基本类（如下的byte等）<br>想要使用基本类的话必须使用对应的包装类</p><table><thead><tr><th align="center">基本类型</th><th align="center">包装类</th></tr></thead><tbody><tr><td align="center">byte</td><td align="center">Byte</td></tr><tr><td align="center">short</td><td align="center">Short</td></tr><tr><td align="center">int</td><td align="center">Integer</td></tr><tr><td align="center">long</td><td align="center">Long</td></tr><tr><td align="center">float</td><td align="center">Float</td></tr><tr><td align="center">double</td><td align="center">Double</td></tr><tr><td align="center">char</td><td align="center">Character</td></tr><tr><td align="center">boolean</td><td align="center">Boolean</td></tr></tbody></table><hr><p><em>Markdown想要在网页中表格显示，‘ | ’前必须有空格</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>类与对象</title>
+      <link href="/2021/07/21/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/"/>
+      <url>/2021/07/21/%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>面向过程就是人亲自手洗衣服，面向对象就是人用洗衣机洗衣服，对象就是洗衣机</p><h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><p>由类到对象，类不能直接使用，需要根据类来创建对象，通过对象才能使用<br>类就是手机图纸，对象就是手机，对象通过调用类的成员变量和成员函数等来调用类</p><h1 id="一个标准的类"><a href="#一个标准的类" class="headerlink" title="一个标准的类"></a>一个标准的类</h1><p>定义一个标准的类（标准的类也叫做Java bean）</p><ol><li>所有的成员变量<strong>都</strong>要用private关键字修饰, <strong>private设置后，对象无法直接调用变量，但可以通过类的函数(get,set等)进行间接调用</strong></li><li>为每个成员变量编写一对get、set方法</li><li>编写一个无参数的构造方法, <strong>构造方法就是在创建对象new的时候就会执行</strong></li><li>编写一个有参数的构造方法, 构造方法也是可以进行重载的</li><li>成员变量和局部变量同名时, 用this.来调用成员变量</li><li>构造方法的命名规则 public 类名 (){}</li></ol><p><strong>任何类和接口都可以成为成员变量</strong></p><h1 id="对象建立"><a href="#对象建立" class="headerlink" title="对象建立"></a>对象建立</h1><p>自建的类名 对象名 = new 自建的类名（）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>IDEA快捷建</title>
+      <link href="/2021/07/16/IDEA%E5%BF%AB%E6%8D%B7%E5%BB%BA/"/>
+      <url>/2021/07/16/IDEA%E5%BF%AB%E6%8D%B7%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><img style="width:800px" src="https://ftp.bmp.ovh/imgs/2021/07/c7b4af4f9027d8ae.png">  <ol><li><p>替换变量名称 </p><ul><li>ctrl+R    选择替换变量，可以替换所有的</li><li>shift+F6  替换选中变量，有时候可以替换所有的，有时候替换一部分（没搞懂</li></ul></li><li><p>提示显示 alt+/</p></li><li><ul><li>5.fori 自动形成数目为5的for循环</li><li>array.fori 自动形成数目为array长度的for循环</li><li>array.forr 自动形成数目为array长度的倒叙for循环</li><li>array.for 增强for循环（详见Collection集合）</li></ul></li><li><p>crtl+Z 撤回      ctrl+shift+z 恢复撤回</p></li></ol><h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol><li><p>javadoc注释方法<br> /**<br> *<br> */</p></li><li><p>在方法中使用数组的时候<br>数组作为参数 <code>public static void method(int[] array )&#123;&#125;</code><br>数组作为返回值 <code>public static int[] method(int a, int b)&#123;&#125;</code><br><em><strong>void是方法无返回值时候的选择，如打印输出</strong></em></p></li><li><p>IDEA中 project–module–package–class</p></li><li><p>int+string会发生转义，如果在sout中不想发生转义需要将字符串用””框住，’’不行<br>‘’代表的是字符，与int在一起会发成转义，变成对应的ASCII码，+号得到的最终是数字<br>“”代表的是字符串，不会转义，通过+号会直接合成一个新的字符串<br>字符可以和int进行大小比较，+，&lt;=, &gt;=等，例如 <code>if(&#39;A&#39; &lt;= 100)&#123;&#125;</code></p></li><li><p>打印对象名，输出的不是地址，说明该对象的类中重写了toString方法</p></li><li><p>静态方法不建议创建对象使用，应该 类名.方法名 使用</p></li><li><p>数组调用参数a[0], 集合Arraylist调用参数 <code>list.get(0)</code></p></li><li><p>a == b ， 比较的是地址值<br>a.equals(b)在没有重写的情况下比较的也是地址，如果在类定义的时候进行重写，可以进行值的比较</p></li></ol><h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>5.13 记</title>
+      <link href="/2021/05/13/5-13-%E8%AE%B0/"/>
+      <url>/2021/05/13/5-13-%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="修改意见"><a href="#修改意见" class="headerlink" title="修改意见"></a>修改意见</h1><p>1 摘要修改，原先内容基本<strong>一句到底</strong>，分成几句话进行分析</p><p>2 将二三段合并，合成一个5G异构网络模型，增加一章对神经网络和深度学习进行介绍</p><p>3 仿真结果图不够丰富，增加仿真结果，增加仿真参数</p><p>4 仿真结果有问题，一些图横纵坐标有问题，一些图不收敛</p><p>5 <strong>论文一般是以第三人称进行描述</strong>，少用<em>我们，我</em>，可以用本文，本研究，研究中等，文字应避免口语化，体现专业性</p><p>6 整理行文逻辑</p><h1 id="完成情况"><a href="#完成情况" class="headerlink" title="完成情况"></a>完成情况</h1><p>1 摘要修改完成，二三段合并完成，并对公式和图的标号进行修改，增加了一章的内容，介绍了深度强化学习</p><p>2 因为DQN神经网络训练的并不成功，仿真结果一直不好，尝试着增加了几张图，但<strong>很不理想</strong>，后期再想办法进行修改看看能不能过关</p><p>3 仿真图修改完成，不收敛的图删除不要</p><p>4 第三人称和行文逻辑问题还没有修改，仿真参数也没有添加</p><h1 id="模型问题"><a href="#模型问题" class="headerlink" title="模型问题"></a>模型问题</h1><p>想了想，我是只把最后一个时隙的状态输入到了神经网络中，应该输入最后的多个时隙状态，这样子的效果会更好，但现在已经很难修改代码结构（这部分的代码很难修改，要是修改会影响很多的部分）</p><p>用户太少的问题，我尝试建立一个函数增加用户数量，但运行时间极大幅度增加，还不停报错，放弃，后续有机会进行进一步的修改</p><p>D2D与UE的0距离接触导致的干扰激增问题暂时无法解决，后续看论文整理下思路</p><h1 id="计划"><a href="#计划" class="headerlink" title="计划"></a>计划</h1><p>脑壳疼，真的不想改，出优秀毕设的意愿也不是很大，但是导师看我论文比我自己都认真，实在是不改不合适，尽量15号之前修改完毕吧，希望可以稳妥毕业<br><img style="width:300px" src="https://ftp.bmp.ovh/imgs/2021/05/fcfcb3c542b97e1b.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇</title>
+      <link href="/2021/05/10/2021%E5%B9%B45%E6%9C%8810%E6%97%A5/"/>
+      <url>/2021/05/10/2021%E5%B9%B45%E6%9C%8810%E6%97%A5/</url>
+      
+        <content type="html"><![CDATA[<p>首先感谢Vychod（lc，可以在友链里看见他）的博客制作帮助，根本不知道想要一个自己的博客该怎么开始比较好，你是个好人。</p><p>要成为研究生了，为了以后可以找到一个好工作和不被导师嫌弃想学习一些有用的技能，打算把自己刷力扣算法的一些思路和学习编程的遇到注意点写在自己的博客上，争取做个有用的人。</p><p>也许还会更新更新日记日常什么的，嘻嘻</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
