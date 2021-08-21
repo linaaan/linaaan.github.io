@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Map, 呢喃">
+    <meta name="keywords" content="异常, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Map | 呢喃</title>
+    <title>异常 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.bmp.ovh/imgs/2021/08/1bbab4c5cf49db31.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.bmp.ovh/imgs/2021/08/7af52f0f40e4d9e1.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Map</h1>
+                    <h1 class="description center-align post-title">异常</h1>
                 </div>
             </div>
         </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-17
+                    2021-08-21
                 </div>
                 
 
@@ -470,24 +470,89 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Map的基本内容"><a href="#Map的基本内容" class="headerlink" title="Map的基本内容"></a>Map的基本内容</h1><p> Map集合是一个双列集合，一个元素包含两个值（key，value）</p>
+                <h1 id="Debug调试程序："><a href="#Debug调试程序：" class="headerlink" title="Debug调试程序："></a>Debug调试程序：</h1><p>可以让代码逐行执行，查看代码执行的过程，调试过程中的bug<br>使用方式：</p>
 <ul>
-<li>key和value的数据类型可以相同，也可以不同</li>
-<li>key不允许重复，value可以重复</li>
-<li>key和value是一一对应的</li>
-<li>HashMap很快，但无序，继承Map方法</li>
+<li>在行号的右边鼠标左键单击添加断点</li>
+<li>右键选择debug,程序会停留在第一个断点处</li>
+<li>执行程序：</li>
+<li>f8 逐行执行程序</li>
+<li>f7 进入到方法中，不然在主程序的下一行会直接输出方法的结果，而不会执行方法的一行一行</li>
+<li>shift+f8 跳出方法</li>
+<li>f9 跳到下一个断点，若没有下一个断点就结束程序</li>
+<li>ctrl+f2 退出debug，停止程序</li>
+<li>Console 切换回控制台</li>
 </ul>
-<h1 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h1><ul>
-<li>get（key）=&gt;value 根据key值获得value。。。</li>
-<li>put（key, value）=&gt;value 存储进map中，若key不重复返回空，若重复返回被替换的value</li>
-<li>remove（key）=&gt;value 移除key，返回value值</li>
-<li>containkey（key）=&gt;booolean 是否含有这个key</li>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>异常指的是程序在执行过程中出现的非正常情况<br>指的并不是语法错误，如果语法错了，编译不通过，根本不能运行<br>Throwable是所有错误和异常的超类</p>
+<h1 id="异常类型"><a href="#异常类型" class="headerlink" title="异常类型"></a>异常类型</h1><p>Exception</p>
+<ul>
+<li>编译期异常，进行写代码出现的问题</li>
+<li>RuntimeException 运行期异常，运行过程中出现的问题</li>
+<li>异常就相当于一个小毛病，处理掉就可以继续执行</li>
 </ul>
-<h1 id="特殊方法"><a href="#特殊方法" class="headerlink" title="特殊方法"></a>特殊方法</h1><ul>
-<li>keyset（）<br>将Map的key全部返回到一个set中，可以利用set的特点遍历key获取value</li>
-<li>entrySet（）<br>将map的entry对象取出存储到set中，（entry对象就是键值对的映射关系，类似于结婚证），<br>entry对象有getKey()和getValue()方法，可以在遍历中使用</li>
+<p>Error错误</p>
+<ul>
+<li>错误就相当于程序得了一个无法治愈的毛病，必须修改源代码才能继续执行</li>
 </ul>
+<h1 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h1><p>java异常处理的五个关键字：try catch finally throw throws</p>
+<h2 id="throw"><a href="#throw" class="headerlink" title="throw"></a>throw</h2><p>throw可以在指定的方法中抛出指定的异常<br>使用格式 <code>throw new xxxException(&quot;异常产生的原因&quot;)</code><br>注意</p>
+<ol>
+<li>必须写在方法的内部</li>
+<li>new后边的对象必须是Exception或者Exception的子类对象</li>
+<li>抛出指定的异常对象，我们必须处理这个异常对象<ul>
+<li>throw关键字后边创建的是运行期异常RuntimeException或者RuntimeException的子类对象，可以不处理</li>
+<li>throw关键字后边创建的是编译异常（写代码时报错），必须处理，用throws或者try…catch</li>
+</ul>
+</li>
+</ol>
+<h2 id="throws"><a href="#throws" class="headerlink" title="throws"></a>throws</h2><p>throws关键字：异常处理的第一种方式，交给别人处理<br>使用格式：在方法声明时使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名 （参数列表） throws AAAException，BBBException&#123;</span><br><span class="line">    throw new AAAException(&quot;异常产生的原因&quot;)</span><br><span class="line">    throw new BBBException(&quot;异常产生的原因&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：</p>
+<ol>
+<li>必须写在方法声明处</li>
+<li>后面的声明异常必须是Exception或者Exception的子类对象</li>
+<li>方法内部抛出多个异常，那么throws后边必须声明多个，如果异常有子父类关系，直接声明父类即可</li>
+<li>方法要throws声明，main函数也要throws声明，但是有缺点，方法中异常之后的代码不会再处理</li>
+</ol>
+<h2 id="try…catch"><a href="#try…catch" class="headerlink" title="try…catch"></a>try…catch</h2><p>try…catch关键字：异常处理的第二种方式，自己处理异常<br>格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">    可能产生异常的代码</span><br><span class="line">&#125;catch（定义一个异常变量，用来接收try中的异常对象）&#123;</span><br><span class="line">    异常处理逻辑，接受异常对象后怎么处理异常对象</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">catch（异常类名xxException 变量名）&#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p>注意</p>
+<ol>
+<li>try抛出多个异常对象，就可以属于多个catch来处理这些异常对象</li>
+<li><ul>
+<li>如果try中产生了异常，就会执行catch中的异常处理逻辑，执行完之后继续执行之后的代码</li>
+<li>如果try中没有异常，执行完try中的代码之后继续执行try…catch之后的代码</li>
+</ul>
+</li>
+<li>可以是方法throws声明个异常，然后在main函数中使用try…catch处理这个异常</li>
+<li>try多个异常的时候，会执行第一个遇到的异常的catch，剩下的异常不再处理</li>
+</ol>
+<h2 id="finally代码块"><a href="#finally代码块" class="headerlink" title="finally代码块"></a>finally代码块</h2><p>格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">try&#123;</span><br><span class="line">   可能产生异常的代码</span><br><span class="line">&#125;catch（定义一个异常变量，用来接收try中的异常对象）&#123;</span><br><span class="line">   异常处理逻辑，接受异常对象后怎么处理异常对象</span><br><span class="line">&#125;</span><br><span class="line"> 。。。</span><br><span class="line">catch（异常类名xxException 变量名）&#123;&#125;</span><br><span class="line">finally&#123;</span><br><span class="line">  无论是否出现异常都会执行</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意</p>
+<ul>
+<li>finally不能单独使用，必须和try一起使用</li>
+<li>finally一般用于资源释放（资源回收），无论程序是否出现异常，最后都要资源释放（IO）</li>
+</ul>
+<h2 id="子父类异常"><a href="#子父类异常" class="headerlink" title="子父类异常"></a>子父类异常</h2><ul>
+<li> 如果父类抛出了多个异常，子类重写父类方法时，抛出和父类相同的异常，或者是父类异常的子类，或者不抛出异常</li>
+<li> 父类没有抛出异常，子类重写该方法时也不能抛出异常，只能对异常捕获处理try…catch，不能声明抛出throws</li>
+</ul>
+<h2 id="自定义异常类"><a href="#自定义异常类" class="headerlink" title="自定义异常类"></a>自定义异常类</h2><p>java提供的异常类不够我们使用，需要自己定义一些异常类<br>格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public class XXXException extends Exception / RuntimeException&#123;</span><br><span class="line">  添加一个空参数的构造方法&#123;super（）&#125;</span><br><span class="line">  添加一个带异常信息的构造方法 （String message）&#123;super(message)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意</p>
+<ol>
+<li>自定义异常类一般都是以Exception结尾</li>
+<li>自定义异常类，必须继承Exception / RuntimeException<ul>
+<li> 继承Exception：自定义异常类是编译异常</li>
+<li> 继承RuntimeException： 自定义异常类就是运行期异常，遇到异常会中断程序</li>
+</ul>
+</li>
+</ol>
+<h3 id="异常类定义示例"><a href="#异常类定义示例" class="headerlink" title="异常类定义示例"></a>异常类定义示例</h3><img style="width:800px" src="https://s3.bmp.ovh/imgs/2021/08/5ded087cb540e922.png"> 
 
+<h3 id="抛出实现"><a href="#抛出实现" class="headerlink" title="抛出实现"></a>抛出实现</h3><img style="width:800px" src="https://s3.bmp.ovh/imgs/2021/08/ea71650d4f3f6793.png"> 
+
+<h3 id="捕获实现"><a href="#捕获实现" class="headerlink" title="捕获实现"></a>捕获实现</h3><img style="width:800px" src="https://s3.bmp.ovh/imgs/2021/08/e9cee69672f60a5a.png"> 
                 
             </div>
             <hr/>
@@ -513,7 +578,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linaaan.githun.io/2021/08/17/Map/">http://linaaan.githun.io/2021/08/17/Map/</a>
+                    <a href="http://linaaan.githun.io/2021/08/21/%E5%BC%82%E5%B8%B8/">http://linaaan.githun.io/2021/08/21/%E5%BC%82%E5%B8%B8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -596,9 +661,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/08/21/%E5%BC%82%E5%B8%B8/">
                     <div class="card-image">
@@ -615,9 +681,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -630,6 +696,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -648,23 +715,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/15/%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/">
+                <a href="/2021/08/17/Map/">
                     <div class="card-image">
                         
-                        <img src="https://i.bmp.ovh/imgs/2021/08/d0944c4f27a2e542.png" class="responsive-img" alt="可变参数方法">
+                        <img src="https://i.bmp.ovh/imgs/2021/08/1bbab4c5cf49db31.png" class="responsive-img" alt="Map">
                         
-                        <span class="card-title">可变参数方法</span>
+                        <span class="card-title">Map</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            很有用的可变参数
+                            双列集合
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-17
                             </span>
                         <span class="publish-author">
                             
