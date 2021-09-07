@@ -520,7 +520,7 @@
 <h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><p>字节输入流的基本共性功能方法。</p>
 <ul>
 <li><code>public void close()</code> ：关闭此输入流并释放与此流相关联的任何系统资源。</li>
-<li><code>public abstract int read()</code> ： 从输入流读取数据的下一个字节。</li>
+<li><code>public abstract int read()</code> ： 从输入流读取数据的下一个字节，返回的是每个字符对应的ASCAII码数字（一个汉字需要3个字符）</li>
 <li><code>public int read(byte[] b)</code> ： 从输入流中读取一些字节数，并将它们存储到字节数组b中 。<br>小贴士： close方法，当完成流的操作时，必须调用此方法，释放系统资源。</li>
 </ul>
 <h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><p>文件字节输入流<br>作用 把硬盘文件中的数据读取到内存中使用</p>
