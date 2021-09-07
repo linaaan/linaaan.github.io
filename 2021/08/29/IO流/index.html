@@ -609,6 +609,41 @@
 <p>JDK9又进行优化<br>格式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A a = new A();</span><br><span class="line">B b = new B();</span><br><span class="line">try(a;b)&#123;</span><br><span class="line">    读写数据</span><br><span class="line">&#125;catch(....)&#123;</span><br><span class="line">    .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="Properties集合"><a href="#Properties集合" class="headerlink" title="Properties集合"></a>Properties集合</h1><p>Properties集合是一个唯一可以和IO流相结合的集合<br>可以对IO流进行store和load操作<br>具体需要再查</p>
+<h1 id="字节字符转换问题"><a href="#字节字符转换问题" class="headerlink" title="字节字符转换问题"></a>字节字符转换问题</h1><p>文件存储是字节，字符变为字节是编码，字节变为字符是解码<br>编码解码必须是同一套charset机制</p>
+<ul>
+<li>IDEA默认的是UTF-8编码</li>
+<li>windows系统创建的文本文件是默认GBK编码，这样子会产生乱码（但我尝试了下，好像现在是默认UTF-8了）<br>对此需要使用转换流来进行处理</li>
+</ul>
+<h2 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h2><p>继承了writer，OutputStreamWriter是字符流通向字节流的桥梁：可使用指定的 charset 将要写入流中的字符编码成字节<br>(编码，能看懂的变成看不懂的)<br>构造方法</p>
+<ul>
+<li><code>OutputStreamWriter(OutputStream out)</code> 创建使用默认字符编码的 OutputStreamWriter，默认UTF-8。</li>
+<li><code>OutputStreamWriter(OutputStream out, String charsetName)</code> 创建使用指定字符集的 OutputStreamWriter。<br>参数</li>
+<li>OutputStream out 字节输出流</li>
+<li>String charsetName 指定的编码表面名称，不区分大小写<br>使用步骤</li>
+</ul>
+<ol>
+<li>创建OutputStreamWriter对象，构造方法中传递字节输出流和指定的编码表名称</li>
+<li>使用OutputStreamWriter对象中的方法write，把字符转换为字节存储到缓冲区中</li>
+<li>使用OutputStreamWriter对象中的方法flush，刷新。。</li>
+<li>资源释放</li>
+</ol>
+<h2 id="InputStreamReader"><a href="#InputStreamReader" class="headerlink" title="InputStreamReader"></a>InputStreamReader</h2><p>继承了Reader，InputStreamReader 是字节流通向字符流的桥梁：它使用指定的 charset 读取字节并将其解码为字符<br>（解码。看不懂的变成能看懂的）<br>构造方法</p>
+<ul>
+<li><code>InputStreamReader(InputStream in)</code> 创建一个使用默认字符集的 InputStreamReader。</li>
+<li><code>InputStreamReader(InputStream in, String charsetName)</code> 创建使用指定字符集的 InputStreamReader。<br>参数</li>
+<li>InputStream in 字节输入流</li>
+</ul>
+<p>使用步骤</p>
+<ol>
+<li>建IutputStreamReader对象，构造方法中传递字节输入流和指定的编码表名称</li>
+<li>使用InputStreamReader对象中的方法read读取文件</li>
+<li>释放资源<br>注意事项</li>
+</ol>
+<ul>
+<li>构造方法中指定的编码表名称要和文件的编码<strong>相同</strong>，否则会发生乱码</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Demo04FileReaderProlem &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        write_gbk();</span><br><span class="line">        read_gbk();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void read_gbk() throws IOException &#123;</span><br><span class="line">        InputStream in;</span><br><span class="line">        Charset charset;</span><br><span class="line">        InputStreamReader isr = new InputStreamReader(new FileInputStream(&quot;Demo03\\gbk.txt&quot;), &quot;gbk&quot;);</span><br><span class="line">        int len = 0;</span><br><span class="line">        while ((len = isr.read()) != -1)&#123;</span><br><span class="line">            System.out.println((char)len);</span><br><span class="line">        &#125;</span><br><span class="line">        isr.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void write_gbk() throws IOException &#123;</span><br><span class="line">        OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(&quot;Demo03\\gbk.txt&quot;),&quot;gbk&quot; );</span><br><span class="line">        osw.write(&quot;你好啊&quot;);</span><br><span class="line">        osw.flush();</span><br><span class="line">        osw.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>以GBK的方式写入写出，读出的文件用char强制转换是<br>你<br>好<br>啊<br>如果不强制转换输出<br>20320<br>22909<br>21834</p>
 
                 
             </div>
