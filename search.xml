@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>缓冲流</title>
+      <link href="/2021/09/07/%E7%BC%93%E5%86%B2%E6%B5%81/"/>
+      <url>/2021/09/07/%E7%BC%93%E5%86%B2%E6%B5%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>缓冲流是对IO流的一种增强<br>给基本的流对象增加一个缓冲区（数组），<strong>提高流对象的效率</strong></p><h1 id="BufferedOutputStream"><a href="#BufferedOutputStream" class="headerlink" title="BufferedOutputStream"></a>BufferedOutputStream</h1><p>节缓冲输出流 继承父类OutputStream的成员方法<br><code>BufferedOutputStream(OutputStream out)</code> 创建字节缓冲输出流对象<br>使用步骤</p><ol><li>创建FileOutputStream对象，构造方法中绑定要输出的目的地</li><li>创建BufferedOutputStream对象，构造方法中传递FileOutputStream对象</li><li>使用BufferedOutputStream对象中的方法write，把数据写入到内部缓冲区中</li><li>使用BufferedOutputStream对象中的方法flush，把内部缓冲区中的数据刷新到文件中</li><li>释放资源（第4步可以省略）</li></ol><h1 id="BufferedInputStream"><a href="#BufferedInputStream" class="headerlink" title="BufferedInputStream"></a>BufferedInputStream</h1><p>字节缓冲输入流 继承父类InputStream的成员方法<br><code>BufferedInputStream(InputStream in)</code> 创建字节缓冲输入流对象</p><p>使用步骤（重点）</p><ol><li>创建FileIutputStream对象，构造方法中绑定要读取的数据源</li><li>创建BufferedIutputStream对象，构造方法中传递FileIutputStream对象</li><li>使用BufferedIutputStream对象中的方法read，读取文件</li><li>释放资源</li></ol><h1 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h1><p>字符缓冲输出流 继承writer的所有成员方法<br><code>BufferedWriter(Writer out)</code> 创建字符缓冲输出流对象<br>特有方法</p><ul><li><code>void newLine()</code> 写一行行分隔符，行分隔符字符串由系统属性定义，为输出完成换行</li></ul><p>使用步骤</p><ol><li>创建字符缓冲输出流对象，构造文件中传递字符输出流</li><li>调用字符缓冲输出流中的方法write，把数据写入到内存缓冲区中</li><li>调用字符缓冲流中的方法flush，把内存缓冲区中的数据率刷新到文件中</li><li>释放资源</li></ol><h1 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h1><p>字符缓冲输入流 继承了Reader的所有成员方法<br><code>BufferedReader(Reader in)</code> 创建字符缓冲输入流对象<br>特有方法</p><ul><li><code>String readLine()</code> 读一行文字。 结果包含行的内容的字符串，不包括任何行终止字符(例如换行符)，如果流的结尾已经到达（超过有内容的最后一行），则为null</li></ul><p>使用步骤</p><ol><li>创建字符缓冲输入流对象，构造文件中传递字符输入流</li><li>使用字符缓冲输入流对象中的方法read/readline读取文本</li><li>释放资源</li></ol><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试代码<br>把一个文件的乱序内容排序输出到一个新的文件中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class DemoTest &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        TreeMap&lt;String, String&gt; map = new TreeMap&lt;&gt;();</span><br><span class="line">        BufferedReader br = new BufferedReader(new FileReader(&quot;Demo03\\demo.txt&quot;));</span><br><span class="line">        BufferedWriter bw = new BufferedWriter(new FileWriter(&quot;Demo03\\out.txt&quot;));</span><br><span class="line">        String line;</span><br><span class="line">        while ((line = br.readLine()) != null)&#123;</span><br><span class="line">            String[] ary = line.split(&quot;\\.&quot;);</span><br><span class="line">            // .是转义字符，需要\\处理</span><br><span class="line">            map.put(ary[0],ary[1]);</span><br><span class="line">            // Treemap会自动排序</span><br><span class="line">        &#125;</span><br><span class="line">        for (String key: map.keySet()</span><br><span class="line">             ) &#123;</span><br><span class="line">            String s = map.get(key);</span><br><span class="line">            line = key + &quot;.&quot; + s;</span><br><span class="line">            bw.write(line);</span><br><span class="line">            bw.newLine();</span><br><span class="line">        &#125;</span><br><span class="line">        bw.close();</span><br><span class="line">        br.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>原文件内容<br><img style="width:800px" src="https://img14.360buyimg.com/ddimg/jfs/t1/202453/23/5437/18820/61370ae5E4d56dcbd/48a5355f33b6a648.png">  </p><p>新文件内容<br><img style="width:800px" src="https://img13.360buyimg.com/ddimg/jfs/t1/197544/5/7185/16599/61370b2dEa045d152/241f1d28ff83659c.png">  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>研究生开学了</title>
       <link href="/2021/08/30/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BC%80%E5%AD%A6%E4%BA%86/"/>
       <url>/2021/08/30/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BC%80%E5%AD%A6%E4%BA%86/</url>

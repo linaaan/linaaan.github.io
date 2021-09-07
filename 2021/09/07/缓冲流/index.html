@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="研究生开学了, 呢喃">
+    <meta name="keywords" content="缓冲流, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>研究生开学了 | 呢喃</title>
+    <title>缓冲流 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.bmp.ovh/imgs/2021/08/a52ebcc5862709c9.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img11.360buyimg.com/ddimg/jfs/t1/47922/15/16637/3244853/61370902E6d5fd855/6396db7e14942497.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">研究生开学了</h1>
+                    <h1 class="description center-align post-title">缓冲流</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +419,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%97%A5%E8%AE%B0/">
-                                <span class="chip bg-color">日记</span>
+                            <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                                <span class="chip bg-color">Java基础知识</span>
                             </a>
                         
                     </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-30
+                    2021-09-07
                 </div>
                 
 
@@ -470,9 +470,48 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>9月1号就要滚回学校开学了，希望开学可以与室友同学保持良好的交流关系，与工友建立积极的合作关系，与导师最好是亦师亦友的高效关系，少遇到一些脑瘫，多遇到贵人，生活每天快快乐乐。</p>
-<p>还要督促自己每天加油学习+减肥，学习不能停；一定要努力完成导师布置的任务，少被导师骂，导师人很好，骂你是因为你不争气，要保持积极向上的心，不要因为被骂过于影响自己的心态，学会去调整自己的不成熟；有目的地提升编程能力，奥里给。</p>
-<p>最后，希望这新的学期可以找到一个我喜欢，也喜欢我的漂亮女朋友，短发女孩儿天下第一。<br><img style="width:1000px" src="https://img11.360buyimg.com/ddimg/jfs/t1/196674/23/20765/171357/612cd0a2E5f19f10c/cc2cf02c458aa39b.jpg"></p>
+                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>缓冲流是对IO流的一种增强<br>给基本的流对象增加一个缓冲区（数组），<strong>提高流对象的效率</strong></p>
+<h1 id="BufferedOutputStream"><a href="#BufferedOutputStream" class="headerlink" title="BufferedOutputStream"></a>BufferedOutputStream</h1><p>节缓冲输出流 继承父类OutputStream的成员方法<br><code>BufferedOutputStream(OutputStream out)</code> 创建字节缓冲输出流对象<br>使用步骤</p>
+<ol>
+<li>创建FileOutputStream对象，构造方法中绑定要输出的目的地</li>
+<li>创建BufferedOutputStream对象，构造方法中传递FileOutputStream对象</li>
+<li>使用BufferedOutputStream对象中的方法write，把数据写入到内部缓冲区中</li>
+<li>使用BufferedOutputStream对象中的方法flush，把内部缓冲区中的数据刷新到文件中</li>
+<li>释放资源（第4步可以省略）</li>
+</ol>
+<h1 id="BufferedInputStream"><a href="#BufferedInputStream" class="headerlink" title="BufferedInputStream"></a>BufferedInputStream</h1><p>字节缓冲输入流 继承父类InputStream的成员方法<br><code>BufferedInputStream(InputStream in)</code> 创建字节缓冲输入流对象</p>
+<p>使用步骤（重点）</p>
+<ol>
+<li>创建FileIutputStream对象，构造方法中绑定要读取的数据源</li>
+<li>创建BufferedIutputStream对象，构造方法中传递FileIutputStream对象</li>
+<li>使用BufferedIutputStream对象中的方法read，读取文件</li>
+<li>释放资源</li>
+</ol>
+<h1 id="BufferedWriter"><a href="#BufferedWriter" class="headerlink" title="BufferedWriter"></a>BufferedWriter</h1><p>字符缓冲输出流 继承writer的所有成员方法<br><code>BufferedWriter(Writer out)</code> 创建字符缓冲输出流对象<br>特有方法</p>
+<ul>
+<li><code>void newLine()</code> 写一行行分隔符，行分隔符字符串由系统属性定义，为输出完成换行</li>
+</ul>
+<p>使用步骤</p>
+<ol>
+<li>创建字符缓冲输出流对象，构造文件中传递字符输出流</li>
+<li>调用字符缓冲输出流中的方法write，把数据写入到内存缓冲区中</li>
+<li>调用字符缓冲流中的方法flush，把内存缓冲区中的数据率刷新到文件中</li>
+<li>释放资源</li>
+</ol>
+<h1 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h1><p>字符缓冲输入流 继承了Reader的所有成员方法<br><code>BufferedReader(Reader in)</code> 创建字符缓冲输入流对象<br>特有方法</p>
+<ul>
+<li><code>String readLine()</code> 读一行文字。 结果包含行的内容的字符串，不包括任何行终止字符(例如换行符)，如果流的结尾已经到达（超过有内容的最后一行），则为null</li>
+</ul>
+<p>使用步骤</p>
+<ol>
+<li>创建字符缓冲输入流对象，构造文件中传递字符输入流</li>
+<li>使用字符缓冲输入流对象中的方法read/readline读取文本</li>
+<li>释放资源</li>
+</ol>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>测试代码<br>把一个文件的乱序内容排序输出到一个新的文件中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class DemoTest &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        TreeMap&lt;String, String&gt; map = new TreeMap&lt;&gt;();</span><br><span class="line">        BufferedReader br = new BufferedReader(new FileReader(&quot;Demo03\\demo.txt&quot;));</span><br><span class="line">        BufferedWriter bw = new BufferedWriter(new FileWriter(&quot;Demo03\\out.txt&quot;));</span><br><span class="line">        String line;</span><br><span class="line">        while ((line = br.readLine()) != null)&#123;</span><br><span class="line">            String[] ary = line.split(&quot;\\.&quot;);</span><br><span class="line">            // .是转义字符，需要\\处理</span><br><span class="line">            map.put(ary[0],ary[1]);</span><br><span class="line">            // Treemap会自动排序</span><br><span class="line">        &#125;</span><br><span class="line">        for (String key: map.keySet()</span><br><span class="line">             ) &#123;</span><br><span class="line">            String s = map.get(key);</span><br><span class="line">            line = key + &quot;.&quot; + s;</span><br><span class="line">            bw.write(line);</span><br><span class="line">            bw.newLine();</span><br><span class="line">        &#125;</span><br><span class="line">        bw.close();</span><br><span class="line">        br.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原文件内容<br><img style="width:800px" src="https://img14.360buyimg.com/ddimg/jfs/t1/202453/23/5437/18820/61370ae5E4d56dcbd/48a5355f33b6a648.png">  </p>
+<p>新文件内容<br><img style="width:800px" src="https://img13.360buyimg.com/ddimg/jfs/t1/197544/5/7185/16599/61370b2dEa045d152/241f1d28ff83659c.png">  </p>
 
                 
             </div>
@@ -499,7 +538,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linaaan.githun.io/2021/08/30/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BC%80%E5%AD%A6%E4%BA%86/">http://linaaan.githun.io/2021/08/30/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BC%80%E5%AD%A6%E4%BA%86/</a>
+                    <a href="http://linaaan.githun.io/2021/09/07/%E7%BC%93%E5%86%B2%E6%B5%81/">http://linaaan.githun.io/2021/09/07/%E7%BC%93%E5%86%B2%E6%B5%81/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,8 +576,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%97%A5%E8%AE%B0/">
-                                    <span class="chip bg-color">日记</span>
+                                <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                                    <span class="chip bg-color">Java基础知识</span>
                                 </a>
                             
                         </div>
@@ -582,9 +621,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/07/%E7%BC%93%E5%86%B2%E6%B5%81/">
                     <div class="card-image">
@@ -601,9 +641,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -616,6 +656,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -634,23 +675,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/29/IO%E6%B5%81/">
+                <a href="/2021/08/30/%E7%A0%94%E7%A9%B6%E7%94%9F%E5%BC%80%E5%AD%A6%E4%BA%86/">
                     <div class="card-image">
                         
-                        <img src="https://i.bmp.ovh/imgs/2021/08/b740a9e1924b3d54.png" class="responsive-img" alt="IO流">
+                        <img src="https://i.bmp.ovh/imgs/2021/08/a52ebcc5862709c9.png" class="responsive-img" alt="研究生开学了">
                         
-                        <span class="card-title">IO流</span>
+                        <span class="card-title">研究生开学了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            就是对文件内容的操作
+                            即使一把年纪了，还是不想上学
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-30
                             </span>
                         <span class="publish-author">
                             
@@ -667,8 +708,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">Java基础知识</span>
+                    <a href="/tags/%E6%97%A5%E8%AE%B0/">
+                        <span class="chip bg-color">日记</span>
                     </a>
                     
                 </div>
