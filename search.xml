@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>函数式接口</title>
+      <link href="/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"/>
+      <url>/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</url>
+      
+        <content type="html"><![CDATA[<ol><li>函数式接口就是仅包含一个抽象方法的接口</li><li>函数式接口可以使用Lambda表达式</li><li>接口做参数，参数传递的可以是接口的实现类</li><li>接口的实现类又可以使用匿名内部类或者Lambda方法进行书写简化</li></ol><p>大概就是这样的内容</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>网络编程案例</title>
       <link href="/2021/09/14/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B/"/>
       <url>/2021/09/14/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B/</url>
