@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>方法引用</title>
+      <link href="/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/"/>
+      <url>/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="总体介绍"><a href="#总体介绍" class="headerlink" title="总体介绍"></a>总体介绍</h1><p>方法引用<br><code>::</code>该符号为引用运算符，而它所在的表达式被称为方法引用</p><ul><li>Lambda简化写法 <code>usePrintable(s -&gt; System.out.println(s))</code>;</li><li>方法引用 <code>usePrintable(System.out::println)</code>;</li></ul><p>类似于将使用Lambda的地方替换为方法引用，并省略传递参数</p><h1 id="成员方法引用"><a href="#成员方法引用" class="headerlink" title="成员方法引用"></a>成员方法引用</h1><p>通过对象引用类中的成员方法，只要对象存在，成员方法存在<br>格式<br>对象::成员方法<br>范例<br><code>&quot;HelloWorld&quot;::toUpperCase</code><br>String类中的方法：<code>public String toUpperCase()</code> 将此String所有字符转换为大写</p><h1 id="其他引用"><a href="#其他引用" class="headerlink" title="其他引用"></a>其他引用</h1><ul><li>通过类名引用静态成员方法，类已存在，静态成员方法也已经存在</li><li>类似有父类super引用，本类this引用，构造器引用</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>函数式接口</title>
       <link href="/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"/>
       <url>/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/</url>
