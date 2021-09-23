@@ -488,7 +488,7 @@
 </ul>
 <h2 id="中间方法"><a href="#中间方法" class="headerlink" title="中间方法"></a>中间方法</h2><p>（基本处理方式大概是每次会对流中的一个元素进行处理，并递进）<br>中间方法的特点：执行完此方法之后，返回值类型仍是Stream接口，Stream流依然可以继续执行其他操作。</p>
 <ul>
-<li><p><code>Stream filter(Predicate predicate)</code> 用于对流中的数据进行过滤<br>Predicate接口是一个判断类的函数式接口，包含一个<code>test(T t)</code>的抽象方法，如果<code>test(T t)</code>返回一个true，则放在新的流中</p>
+<li><p><code>Stream filter(Predicate predicate)</code> 用于对流中的数据进行过滤<br>Predicate接口是一个判断类的函数式接口，包含一个<code>test(T t)</code>的抽象方法，对数据按照需求进行判断，如果<code>test(T t)</code>返回一个true，则将数据放在新的流中</p>
 </li>
 <li><p><code>Stream limit(long maxSize)</code> 返回此流中的元素组成的流，截取前指定参数个数的数据</p>
 </li>
