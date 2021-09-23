@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="方法引用, 呢喃">
+    <meta name="keywords" content="Stream流, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>方法引用 | 呢喃</title>
+    <title>Stream流 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img12.360buyimg.com/ddimg/jfs/t1/210453/36/1815/3555/614c7c3fE4af308a3/ebe640d8edfc7430.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/209275/32/1848/1301660/614c7e5cEbb5067b5/412811cd16baa77f.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">方法引用</h1>
+                    <h1 class="description center-align post-title">Stream流</h1>
                 </div>
             </div>
         </div>
@@ -470,17 +470,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="总体介绍"><a href="#总体介绍" class="headerlink" title="总体介绍"></a>总体介绍</h1><p>方法引用<br><code>::</code>该符号为引用运算符，而它所在的表达式被称为方法引用</p>
+                <h1 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h1><p>Stream流与IO流无关，类似于lambda的简化，关注的是做什么，而不是怎么做<br>Stream流的好处</p>
 <ul>
-<li>Lambda简化写法 <code>usePrintable(s -&gt; System.out.println(s))</code>;</li>
-<li>方法引用 <code>usePrintable(System.out::println)</code>;</li>
+<li>直接阅读代码的字面意思即可完美展示无关逻辑方式的语义：获取流、过滤姓张、过滤长度为3、逐一打印</li>
+<li>Stream流把真正的函数式编程风格引入到Java中</li>
 </ul>
-<p>类似于将使用Lambda的地方替换为方法引用，并省略传递参数</p>
-<h1 id="成员方法引用"><a href="#成员方法引用" class="headerlink" title="成员方法引用"></a>成员方法引用</h1><p>通过对象引用类中的成员方法，只要对象存在，成员方法存在<br>格式<br>对象::成员方法<br>范例<br><code>&quot;HelloWorld&quot;::toUpperCase</code><br>String类中的方法：<code>public String toUpperCase()</code> 将此String所有字符转换为大写</p>
-<h1 id="其他引用"><a href="#其他引用" class="headerlink" title="其他引用"></a>其他引用</h1><ul>
-<li>通过类名引用静态成员方法，类已存在，静态成员方法也已经存在</li>
-<li>类似有父类super引用，本类this引用，构造器引用</li>
+<p>Stream流的特点</p>
+<ul>
+<li>Stream流的是一个来自数据源的元素队列，数据源流的来源，可以是集合，数组等</li>
+<li>Stream流属于管道流，只能被消费使用一次，第一个Stream流调用完毕方法，数据就会流转到下一个Stream上，而此时第一个Stream流已经使用完毕并关闭，无法再调用</li>
 </ul>
+<h1 id="Stream流的使用"><a href="#Stream流的使用" class="headerlink" title="Stream流的使用"></a>Stream流的使用</h1><h2 id="获取流"><a href="#获取流" class="headerlink" title="获取流"></a>获取流</h2><p>获取一个流的方式</p>
+<ul>
+<li>Collection体系集合<br>使用默认方法<code>stream()</code>生成流， <code>default Stream stream()</code></li>
+<li>Map体系集合<br>把Map转成Set集合，间接的生成流（<code>set.stream()</code>）</li>
+<li>数组<br>通过Stream接口的静态方法<code>of(T... values)</code>生成流<code>(Stream.of(数组)</code>或者<code>Stream.of(1,2,3,4))</code></li>
+</ul>
+<h2 id="中间方法"><a href="#中间方法" class="headerlink" title="中间方法"></a>中间方法</h2><p>（基本处理方式大概是每次会对流中的一个元素进行处理，并递进）<br>中间方法的特点：执行完此方法之后，返回值类型仍是Stream接口，Stream流依然可以继续执行其他操作。</p>
+<ul>
+<li><p><code>Stream filter(Predicate predicate)</code> 用于对流中的数据进行过滤<br>Predicate接口是一个判断类的函数式接口，包含一个<code>test(T t)</code>的抽象方法，如果<code>test(T t)</code>返回一个true，则放在新的流中</p>
+</li>
+<li><p><code>Stream limit(long maxSize)</code> 返回此流中的元素组成的流，截取前指定参数个数的数据</p>
+</li>
+<li><p><code>Stream skip(long n)</code> 跳过指定参数个数的数据，返回由该流的剩余元素组成的流</p>
+</li>
+<li><p><code>static Stream concat(Stream a, Stream b)</code> 合并a和b两个流为一个流</p>
+</li>
+<li><p><code>Stream map(Function mapper)</code> 返回由给定函数应用于此流的元素的结果组成的流，将流中的元素映射到另一个流中去<br>Function接口是一个函数式接口，包含抽象方法<code>apply(T t)</code>,可以将T类型转化为R类型</p>
+</li>
+</ul>
+<h2 id="终结方法"><a href="#终结方法" class="headerlink" title="终结方法"></a>终结方法</h2><p>执行完此方法之后，返回值类型不再是Stream接口，Stream流将不能再执行其他操作。<br>终结方法</p>
+<ul>
+<li><code>void forEach(Consumer action)</code> 对此流的每个元素执行操作<br>Consumer接口是一个消费型的函数式接口，包含一个<code>accept(T t)</code>抽象方法，意味消费一个指定泛型的数据<br>目的是用来遍历流中的数据，并配合accept的Lambda</li>
+<li><code>long count()</code> 返回此流中的元素数</li>
+</ul>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>函数式接口的处理方式就是</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stream.filter((test抽象函数参数) -&gt; &#123;test抽象函数内容&#125;).map((...) -&gt; &#123;...&#125;).forEach.((...) -&gt; &#123;...&#125;)</span><br></pre></td></tr></table></figure>
+<p>配合前面的博客食用</p>
 
                 
             </div>
@@ -507,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linaaan.githun.io/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">http://linaaan.githun.io/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</a>
+                    <a href="http://linaaan.githun.io/2021/09/23/Stream%E6%B5%81/">http://linaaan.githun.io/2021/09/23/Stream%E6%B5%81/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -590,9 +616,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/23/Stream%E6%B5%81/">
                     <div class="card-image">
@@ -609,9 +636,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -624,6 +651,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -642,23 +670,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">
+                <a href="/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/">
                     <div class="card-image">
                         
-                        <img src="https://img14.360buyimg.com/ddimg/jfs/t1/199485/39/9093/1311697/614819adEed66a243/554afe52831fd369.png" class="responsive-img" alt="函数式接口">
+                        <img src="https://img12.360buyimg.com/ddimg/jfs/t1/210453/36/1815/3555/614c7c3fE4af308a3/ebe640d8edfc7430.jpg" class="responsive-img" alt="方法引用">
                         
-                        <span class="card-title">函数式接口</span>
+                        <span class="card-title">方法引用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单写写
+                            偏难
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-23
                             </span>
                         <span class="publish-author">
                             

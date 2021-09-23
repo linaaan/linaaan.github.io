@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Stream流</title>
+      <link href="/2021/09/23/Stream%E6%B5%81/"/>
+      <url>/2021/09/23/Stream%E6%B5%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h1><p>Stream流与IO流无关，类似于lambda的简化，关注的是做什么，而不是怎么做<br>Stream流的好处</p><ul><li>直接阅读代码的字面意思即可完美展示无关逻辑方式的语义：获取流、过滤姓张、过滤长度为3、逐一打印</li><li>Stream流把真正的函数式编程风格引入到Java中</li></ul><p>Stream流的特点</p><ul><li>Stream流的是一个来自数据源的元素队列，数据源流的来源，可以是集合，数组等</li><li>Stream流属于管道流，只能被消费使用一次，第一个Stream流调用完毕方法，数据就会流转到下一个Stream上，而此时第一个Stream流已经使用完毕并关闭，无法再调用</li></ul><h1 id="Stream流的使用"><a href="#Stream流的使用" class="headerlink" title="Stream流的使用"></a>Stream流的使用</h1><h2 id="获取流"><a href="#获取流" class="headerlink" title="获取流"></a>获取流</h2><p>获取一个流的方式</p><ul><li>Collection体系集合<br>使用默认方法<code>stream()</code>生成流， <code>default Stream stream()</code></li><li>Map体系集合<br>把Map转成Set集合，间接的生成流（<code>set.stream()</code>）</li><li>数组<br>通过Stream接口的静态方法<code>of(T... values)</code>生成流<code>(Stream.of(数组)</code>或者<code>Stream.of(1,2,3,4))</code></li></ul><h2 id="中间方法"><a href="#中间方法" class="headerlink" title="中间方法"></a>中间方法</h2><p>（基本处理方式大概是每次会对流中的一个元素进行处理，并递进）<br>中间方法的特点：执行完此方法之后，返回值类型仍是Stream接口，Stream流依然可以继续执行其他操作。</p><ul><li><p><code>Stream filter(Predicate predicate)</code> 用于对流中的数据进行过滤<br>Predicate接口是一个判断类的函数式接口，包含一个<code>test(T t)</code>的抽象方法，如果<code>test(T t)</code>返回一个true，则放在新的流中</p></li><li><p><code>Stream limit(long maxSize)</code> 返回此流中的元素组成的流，截取前指定参数个数的数据</p></li><li><p><code>Stream skip(long n)</code> 跳过指定参数个数的数据，返回由该流的剩余元素组成的流</p></li><li><p><code>static Stream concat(Stream a, Stream b)</code> 合并a和b两个流为一个流</p></li><li><p><code>Stream map(Function mapper)</code> 返回由给定函数应用于此流的元素的结果组成的流，将流中的元素映射到另一个流中去<br>Function接口是一个函数式接口，包含抽象方法<code>apply(T t)</code>,可以将T类型转化为R类型</p></li></ul><h2 id="终结方法"><a href="#终结方法" class="headerlink" title="终结方法"></a>终结方法</h2><p>执行完此方法之后，返回值类型不再是Stream接口，Stream流将不能再执行其他操作。<br>终结方法</p><ul><li><code>void forEach(Consumer action)</code> 对此流的每个元素执行操作<br>Consumer接口是一个消费型的函数式接口，包含一个<code>accept(T t)</code>抽象方法，意味消费一个指定泛型的数据<br>目的是用来遍历流中的数据，并配合accept的Lambda</li><li><code>long count()</code> 返回此流中的元素数</li></ul><h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>函数式接口的处理方式就是</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stream.filter((test抽象函数参数) -&gt; &#123;test抽象函数内容&#125;).map((...) -&gt; &#123;...&#125;).forEach.((...) -&gt; &#123;...&#125;)</span><br></pre></td></tr></table></figure><p>配合前面的博客食用</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>方法引用</title>
       <link href="/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/"/>
       <url>/2021/09/23/%E6%96%B9%E6%B3%95%E5%BC%95%E7%94%A8/</url>
