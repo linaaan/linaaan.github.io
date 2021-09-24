@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Junit测试</title>
+      <link href="/2021/09/24/Junit%E6%B5%8B%E8%AF%95/"/>
+      <url>/2021/09/24/Junit%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h1><p>测试分类</p><ul><li>黑盒测试 不需要写代码，关注输入能否得到目标期望值</li><li>白盒测试 需要写代码，关注程序具体流程</li></ul><p>Junit 单元测试就是白盒测试，可以专门建立一个test包，用于测试，不必每次新建一个main函数</p><h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><ol><li>定义个测试类<ul><li>建议：<ul><li>测试类名：被测试类名Test</li><li>包名：xxxx.xxxx.test   <strong>不可以写成xxxx.xxxx.Test，会和注解重名，导致程序无法运行</strong></li></ul></li></ul></li><li>定义测试方法：可以独立运行<ul><li>建议：<ul><li>方法名：test测试的方法名</li><li>返回值void</li><li>参数列表：空参</li></ul></li></ul></li><li>给方法加@Test注解</li><li>导入junit依赖环境</li><li>之后测试方法左边会出现三角箭头，点击运行，可以一次只测试一个方法</li></ol><h1 id="判定"><a href="#判定" class="headerlink" title="判定"></a>判定</h1><p>判定结果：</p><ul><li>验证结果是否正确的方法一般通过断言<br><code>Assert.assertEquals(期望结果，运算结果)</code></li></ul><p>补充：</p><ul><li><p>初始化方法：用于资源申请，所有测试方法在执行之前都会先执行该方法<br>添加一个@Before</p></li><li><p>释放资源方法：在所有方法执行完后，都会自动执行该方法<br>添加一个@After</p></li><li><p>每个方法测试前后都会执行这两个方法</p></li></ul><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public class CalculatorTest &#123;</span><br><span class="line">    @Before</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        System.out.println(&quot;start&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    @After</span><br><span class="line">    public void close()&#123;</span><br><span class="line">        System.out.println(&quot;close&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    @Test</span><br><span class="line">    public void testAdd()&#123;</span><br><span class="line">        Calculator cal = new Calculator();</span><br><span class="line">        System.out.println(&quot;test&quot;);</span><br><span class="line">        int add = cal.add(1, 2);</span><br><span class="line">        Assert.assertEquals(3,add);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>结果<br><img style="width:1000px" src="https://img11.360buyimg.com/ddimg/jfs/t1/6491/10/18261/65587/614d3eacE296136ae/487c8d7608df8d8c.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java基础知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Stream流</title>
       <link href="/2021/09/23/Stream%E6%B5%81/"/>
       <url>/2021/09/23/Stream%E6%B5%81/</url>
