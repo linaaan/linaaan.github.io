@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="反射, 呢喃">
+    <meta name="keywords" content="注解, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>反射 | 呢喃</title>
+    <title>注解 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s.pc.qq.com/tousu/img/20210925/3692376_1632568716.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s.pc.qq.com/tousu/img/20210925/2304079_1632570410.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">反射</h1>
+                    <h1 class="description center-align post-title">注解</h1>
                 </div>
             </div>
         </div>
@@ -423,10 +423,6 @@
                                 <span class="chip bg-color">Java基础知识</span>
                             </a>
                         
-                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                <span class="chip bg-color">框架</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -474,63 +470,128 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>反射，框架设计的灵魂<br>框架：半成品软件，可以在框架的基础上进行开发，简化代码<br>反射：将类的各个组成部分封装为其他对象，这就是反射机制<br>具体是指在运行时去获取一个类的变量和方法信息。然后通过获取到的信息来创建对象，调用方法的一种机制，减少对框架内容的修改。</p>
-<p>好处</p>
+                <h1 id="基本内容"><a href="#基本内容" class="headerlink" title="基本内容"></a>基本内容</h1><ul>
+<li><p>注解概念：说明程序的。给计算机看的</p>
+</li>
+<li><p>注释：用文字描述程序的。给程序员看的</p>
+</li>
+<li><p>定义：注解（Annotation），也叫元数据。一种代码级别的说明。它是JDK1.5及以后版本引入的一个特性，与类、接口、枚举是在同一个层次。它可以声明在包、类、字段、方法、局部变量、方法参数等的前面，用来对这些元素进行说明，注释。</p>
+</li>
+<li><p>概念描述：</p>
+<ul>
+<li>JDK1.5之后的新特性</li>
+<li>说明程序的</li>
+<li>使用注解：@注解名称</li>
+</ul>
+</li>
+<li><p>作用分类：</p>
 <ol>
-<li>可以在程序的运行过程中，操作这些对象</li>
-<li>可以解耦，提高程序的可扩展性</li>
+<li>编写文档：通过代码里标识的注解生成文档【生成文档doc文档】</li>
+<li>代码分析：通过代码里标识的注解对代码进行分析【使用反射】 （主要使用）</li>
+<li>编译检查：通过代码里标识的注解让编译器能够实现基本的编译检查【Override】</li>
 </ol>
-<h1 id="获取Class"><a href="#获取Class" class="headerlink" title="获取Class"></a>获取Class</h1><p>获取class类的三种方式</p>
-<ul>
-<li>类名.class属性  多用于参数的传递</li>
-<li>对象名.getClass()方法  多用于对象的获取字节码的方式</li>
-<li>Class.forName(全类名)方法  多用于配置文件中</li>
+</li>
 </ul>
-<p> 同一个字节码文件（*.class）在一次程序运行过程中只会被加载一次，不论通过哪种方式获取的class对象都是同一个（多次获取也仍为同一个）</p>
-<h1 id="Class对象功能："><a href="#Class对象功能：" class="headerlink" title="Class对象功能："></a>Class对象功能：</h1><p>使用方式： 先获得class类a，然后 a.对象功能方法<br>获取功能：</p>
+<h1 id="注解的使用"><a href="#注解的使用" class="headerlink" title="注解的使用"></a>注解的使用</h1><ul>
+<li><p>JDK中预定义的一些注解</p>
+<ul>
+<li>@Override    ：检测被该注解标注的方法是否是继承自父类(接口)的</li>
+<li>@Deprecated：该注解标注的内容，表示已过时；在之后程序调用该内容的时候会出现一道横线表示已过时，但仍可以正常使用</li>
+<li>@SuppressWarnings：压制警告，被注解内容的警告将全部不再显示<ul>
+<li>一般传递参数all  <code>@SuppressWarnings(&quot;all&quot;)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>自定义注解  见范例1</p>
+<ul>
+<li><p>格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">元注解</span><br><span class="line">public @interface 注解名称&#123;</span><br><span class="line">  属性列表;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>本质：注解本质上就是一个<strong>接口</strong>，该接口默认继承Annotation接口</p>
+<ul>
+<li>public interface MyAnno extends java.lang.annotation.Annotation {}</li>
+</ul>
+</li>
+<li><p>属性：接口中的抽象方法</p>
+<ul>
+<li><p>要求：</p>
 <ol>
-<li><p>获取成员变量们</p>
+<li><p>属性的返回值类型有下列取值</p>
 <ul>
-<li><code>Field[] getFields()</code> 返回所有公共<code>(public)</code>成员变量对象的数组</li>
-<li><code>Field[] getDeclaredFields()</code> 返回所有成员变量对象的数组</li>
-<li><code>Field getField(String name)</code> 返回单个公共成员变量对象</li>
-<li><code>Field getDeclaredField(String name)</code> 返回单个成员变量对象</li>
-<li><code>成员变量对象.get(类的对象)</code> 获取值  （类的对象可以通过下面的返回构造方法对象来获得）</li>
-<li><code>成员变量对象.set(类的对象，值)</code> 设定值</li>
-<li><code>成员变量对象.setAccessible(true)</code> 忽略private权限修饰符，直接访问，暴力反射（不使用这个get，set无法访问private对象；同理其他也有setAccessible函数，效果相同）</li>
+<li>基本数据类型</li>
+<li>String</li>
+<li>枚举</li>
+<li>注解</li>
+<li>以上类型的数组</li>
 </ul>
 </li>
-<li><p>获取构造方法们</p>
-<ul>
-<li><code>Constructor&lt;?&gt;[] getConstructors()</code> 返回所有公共构造方法对象的数组</li>
-<li><code>Constructor&lt;?&gt;[] getDeclaredConstructors()</code> 返回所有构造方法对象的数组</li>
-<li><code>Constructor getConstructor(Class&lt;?&gt;... parameterTypes)</code> 返回单个公共构造方法对象（<code>getConstructor(String.class, int.class)</code>）</li>
-<li><code>Constructor getDeclaredConstructor(Class&lt;?&gt;... parameterTypes)</code> 返回单个构造方法对象</li>
-<li><code>构造方法对象.newInstance(参数,参数)</code> 创建对象</li>
-<li>如果没有参数 可以直接 <code>a.newInstance()</code>,省略创建构造方法对象的步骤</li>
-</ul>
-</li>
-<li><p>获取成员方法们</p>
-<ul>
-<li><code>Method[] getMethods()</code> 返回所有公共成员方法对象的数组，包括继承的</li>
-<li><code>Method[] getDeclaredMethods()</code> 返回所有成员方法对象的数组，不包括继承的</li>
-<li><code>Method getMethod(String name, Class&lt;?&gt;... parameterTypes)</code> 返回单个公共成员方法对象</li>
-<li>无参数 如 <code>getMethod(eat)</code></li>
-<li>有参数 如 <code>getMethod(eat，String.class)</code></li>
-<li><code>Method getDeclaredMethod(String name, Class&lt;?&gt;... parameterTypes)</code> 返回单个成员方法对象</li>
-<li><code>方法对象.invoke(类的对象,方法要传递参数（没有就不写）)</code></li>
-<li><code>方法对象.getName()</code> 获取方法名</li>
-</ul>
-</li>
-<li><p>获取类名</p>
+<li><p>定义了属性，在使用时需要给属性赋值   <code>@注解(属性1=...，属性2=...)</code> ， 按照属性的返回值的类型进行赋值</p>
+<ol>
+<li>如果定义属性时，使用default关键字给属性默认初始化值，则使用注解时，可以不进行属性的赋值。</li>
+<li>如果只有一个属性需要赋值，并且属性的名称是value，则value可以省略，直接定义值即可。</li>
+<li>数组赋值时，值使用{}包裹。如果数组中只有一个值，则{}可以省略</li>
+</ol>
 </li>
 </ol>
-<ul>
-<li><code>String getName()</code></li>
+</li>
 </ul>
-<h1 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">public class Person &#123;</span><br><span class="line">    private int age;</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Person&#123;&quot; +</span><br><span class="line">                &quot;age=&quot; + age +</span><br><span class="line">                &quot;, name=&#x27;&quot; + name + &#x27;\&#x27;&#x27; +</span><br><span class="line">                &#x27;&#125;&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person(int age, String name) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Person() &#123;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public int getAge() &#123;</span><br><span class="line">        return age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setAge(int age) &#123;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void eat(String food)&#123;</span><br><span class="line">        System.out.println(&quot;eat&quot;+food);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public class ReflectDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws Exception&#123;</span><br><span class="line">//        Class&lt;?&gt; aClass = Class.forName(&quot;domain.Person&quot;);</span><br><span class="line">//        System.out.println(aClass);</span><br><span class="line">        Class&lt;Person&gt; personClass = Person.class;</span><br><span class="line">//        System.out.println(personClass);</span><br><span class="line">//        Person p = new Person();</span><br><span class="line">//        Class&lt;? extends Person&gt; aClass1 = p.getClass();</span><br><span class="line">//        System.out.println(aClass1);</span><br><span class="line">        Method method = personClass.getMethod(&quot;eat&quot;,String.class);</span><br><span class="line">        Constructor&lt;Person&gt; constructor = personClass.getConstructor();</span><br><span class="line">        Person person = constructor.newInstance();</span><br><span class="line"></span><br><span class="line">        method.invoke(person,&quot;大米&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>结果<br>输出 eat大米</p>
+</li>
+<li><p>元注解：用于描述注解的注解</p>
+<ul>
+<li>@Target：描述注解能够作用的位置 如<code>@Target(ElementType.METHOD,ElementType.TYPE)</code><ul>
+<li>ElementType取值：<ul>
+<li>TYPE：可以作用于类上</li>
+<li>METHOD：可以作用于方法上</li>
+<li>FIELD：可以作用于成员变量上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>@Retention：描述注解被保留的阶段<ul>
+<li><code>@Retention(RetentionPolicy.RUNTIME)</code>：当前被描述的注解，会保留到class字节码文件中，并被JVM读取到</li>
+</ul>
+</li>
+<li>@Documented：描述注解是否被抽取到api文档中</li>
+<li>@Inherited：描述注解是否被子类继承</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在程序使用(解析)注解：获取注解中定义的属性值  见范例2<ol>
+<li>获取注解定义的位置的对象，（定义在方法上，类上）</li>
+<li>获取指定的注解</li>
+</ol>
+<ul>
+<li><code>getAnnotation(Class)</code><br>其实就是在内存中生成了一个该注解接口的子类实现对象，利用对象调用属性值<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class ProImpl implements Pro&#123;</span><br><span class="line">    public String className()&#123;</span><br><span class="line">        return &quot;cn.itcast.annotation.Demo1&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    public String methodName()&#123;</span><br><span class="line">        return &quot;show&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="3">
+<li>调用注解中的抽象方法获取配置的属性值 </li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>小结：<ol>
+<li>以后大多数时候，我们会使用注解，而不是自定义注解</li>
+<li>注解给谁用？</li>
+<li>编译器</li>
+<li>给解析程序用</li>
+<li>注解不是程序的一部分，可以理解为注解就是一个标签，对程序本身无影响</li>
+</ol>
+</li>
+</ul>
+<h1 id="范例"><a href="#范例" class="headerlink" title="范例"></a>范例</h1><ol>
+<li>简单的定义一个注解并调用<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public @interface Anno1 &#123;</span><br><span class="line">    int age();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@SuppressWarnings(&quot;all&quot;)</span><br><span class="line">public class AnnoDemo01 &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 计算两数的和</span><br><span class="line">     * @param a 整数</span><br><span class="line">     * @param b 整数</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static int add(int a, int b)&#123;</span><br><span class="line">        return a+b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *</span><br><span class="line">     * @param s</span><br><span class="line">     */</span><br><span class="line">    @Anno1(age = 1)</span><br><span class="line">    public static void tryone(String s)&#123;</span><br><span class="line">        System.out.println(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>直接在方法前/**加回车即可生成方法注解</li>
+<li>在本类的文件中终端使用javadoc，即可生成注解文件进行查看</li>
+</ul>
+<ol start="2">
+<li>对自定义注解的内容进行调用，配合反射<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@Target(ElementType.TYPE)</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)</span><br><span class="line">public @interface Anno2 &#123;</span><br><span class="line">    int age();</span><br><span class="line">    String name();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@Anno2(age = 8,name = &quot;张三&quot;)</span><br><span class="line">public class AnnoDemo02 &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        Class&lt;AnnoDemo02&gt; annoDemo02Class = AnnoDemo02.class;</span><br><span class="line">        Anno2 annotation = annoDemo02Class.getAnnotation(Anno2.class);</span><br><span class="line">        int age = annotation.age();</span><br><span class="line">        String name = annotation.name();</span><br><span class="line">        System.out.println(name+age);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+输出 张三8</li>
+</ol>
 
                 
             </div>
@@ -557,7 +618,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://linaaan.githun.io/2021/09/25/%E5%8F%8D%E5%B0%84/">http://linaaan.githun.io/2021/09/25/%E5%8F%8D%E5%B0%84/</a>
+                    <a href="http://linaaan.githun.io/2021/09/25/%E6%B3%A8%E8%A7%A3/">http://linaaan.githun.io/2021/09/25/%E6%B3%A8%E8%A7%A3/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -597,10 +658,6 @@
                             
                                 <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
                                     <span class="chip bg-color">Java基础知识</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
-                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                         </div>
@@ -644,9 +701,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/09/25/%E6%B3%A8%E8%A7%A3/">
                     <div class="card-image">
@@ -663,9 +721,58 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-25
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
+                        <span class="chip bg-color">Java基础知识</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/09/25/%E5%8F%8D%E5%B0%84/">
+                    <div class="card-image">
+                        
+                        <img src="https://s.pc.qq.com/tousu/img/20210925/3692376_1632568716.jpg" class="responsive-img" alt="反射">
+                        
+                        <span class="card-title">反射</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            对框架使用有影响
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -685,52 +792,8 @@
                         <span class="chip bg-color">Java基础知识</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/09/24/Junit%E6%B5%8B%E8%AF%95/">
-                    <div class="card-image">
-                        
-                        <img src="https://img11.360buyimg.com/ddimg/jfs/t1/209049/21/1892/187701/614d3dfdE1eac3b59/3fe59d4314a346b5.jpg" class="responsive-img" alt="Junit测试">
-                        
-                        <span class="card-title">Junit测试</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            有用
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">Java基础知识</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">框架</span>
                     </a>
                     
                 </div>
