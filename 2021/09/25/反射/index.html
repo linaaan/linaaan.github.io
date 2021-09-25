@@ -474,7 +474,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>反射：框架设计的灵魂<br>框架：半成品软件，可以在框架的基础上进行开发，简化代码<br>反射：将类的各个组成部分封装为其他对象，这就是反射机制<br>具体是指在运行时去获取一个类的变量和方法信息。然后通过获取到的信息来创建对象，调用方法的一种机制，减少对框架内容的修改。</p>
+                <h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>反射，框架设计的灵魂<br>框架：半成品软件，可以在框架的基础上进行开发，简化代码<br>反射：将类的各个组成部分封装为其他对象，这就是反射机制<br>具体是指在运行时去获取一个类的变量和方法信息。然后通过获取到的信息来创建对象，调用方法的一种机制，减少对框架内容的修改。</p>
 <p>好处</p>
 <ol>
 <li>可以在程序的运行过程中，操作这些对象</li>
@@ -497,7 +497,7 @@
 <li><code>Field getDeclaredField(String name)</code> 返回单个成员变量对象</li>
 <li><code>成员变量对象.get(类的对象)</code> 获取值  （类的对象可以通过下面的返回构造方法对象来获得）</li>
 <li><code>成员变量对象.set(类的对象，值)</code> 设定值</li>
-<li><code>成员变量对象.setAccessible(true)</code> 忽略private权限修饰符，直接访问，暴力反射（不使用这个get，set无法访问对象；同理其他也有setAccessible函数，效果相同）</li>
+<li><code>成员变量对象.setAccessible(true)</code> 忽略private权限修饰符，直接访问，暴力反射（不使用这个get，set无法访问private对象；同理其他也有setAccessible函数，效果相同）</li>
 </ul>
 </li>
 <li><p>获取构造方法们</p>
