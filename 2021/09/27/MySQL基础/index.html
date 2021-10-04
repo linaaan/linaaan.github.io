@@ -495,7 +495,7 @@
 <p> <img src="https://img14.360buyimg.com/ddimg/jfs/t1/197830/33/10387/2456214/61517aaeE275f5e28/c09fdea913e7aea7.bmp" alt="SQL分类"></p>
 </li>
 </ol>
-<h1 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL:操作数据库、表"></a>DDL:操作数据库、表</h1><ol>
+<h1 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL: 操作数据库、表"></a>DDL: 操作数据库、表</h1><ol>
 <li><p>操作数据库：CRUD</p>
 <ol>
 <li><p>C（Create）:创建</p>
@@ -753,7 +753,7 @@
 </ol>
 </li>
 </ol>
-<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL:查询语句"></a>DQL:查询语句</h1><ol>
+<h1 id="DQL-查询语句"><a href="#DQL-查询语句" class="headerlink" title="DQL: 查询语句"></a>DQL: 查询语句</h1><ol>
 <li><p>排序查询</p>
 <ul>
 <li><p>语法：order by 子句</p>
@@ -831,6 +831,65 @@
 <ol start="3">
 <li>limit 是一个MySQL”方言”,在Oracle中会有其他的语法</li>
 </ol>
+</li>
+</ol>
+<h1 id="DCL：管理用户，授权"><a href="#DCL：管理用户，授权" class="headerlink" title="DCL：管理用户，授权"></a>DCL：管理用户，授权</h1><ul>
+<li>DBA：数据库管理员</li>
+</ul>
+<ol>
+<li><p>管理用户</p>
+<ol>
+<li>添加用户：<ul>
+<li>语法：CREATE USER ‘用户名‘@’主机名’ IDENTIFIED BY ‘密码’;</li>
+</ul>
+</li>
+<li>删除用户：<ul>
+<li>语法：DROP USER ‘用户名‘@’主机名’;</li>
+</ul>
+</li>
+<li>修改用户密码：</li>
+</ol>
+<p>   <code>UPDATE USER SET PASSWORD = PASSWORD(&#39;新密码&#39;) WHERE USER = &#39;用户名&#39;;</code><br>   <code>UPDATE USER SET PASSWORD = PASSWORD(&#39;abc&#39;) WHERE USER = &#39;lisi&#39;;</code></p>
+<p>   <code>SET PASSWORD FOR &#39;用户名&#39;@&#39;主机名&#39; = PASSWORD(&#39;新密码&#39;);</code><br>   <code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;123&#39;);</code></p>
+<ul>
+<li>mysql中忘记了root用户的密码？<ol>
+<li>cmd – &gt; net stop mysql 停止mysql服务<ul>
+<li>需要管理员运行该cmd</li>
+</ul>
+</li>
+<li>使用无验证方式启动mysql服务： mysqld –skip-grant-tables</li>
+<li>打开新的cmd窗口,直接输入mysql命令，敲回车。就可以登录成功</li>
+<li>use mysql;</li>
+<li><code>update user set password = password(&#39;你的新密码&#39;) where user = &#39;root&#39;</code>;</li>
+<li>关闭两个窗口</li>
+<li>打开任务管理器，手动结束mysqld.exe 的进程</li>
+<li>启动mysql服务</li>
+<li>使用新密码登录。</li>
+</ol>
+</li>
+</ul>
+<ol start="4">
+<li>查询用户：</li>
+</ol>
+<p>   – 1. 切换到mysql数据库<br>   USE myql;<br>   – 2. 查询user表<br>   SELECT * FROM USER;</p>
+<ul>
+<li>通配符： % 表示可以在任意主机使用用户登录数据库</li>
+</ul>
+</li>
+<li><p>权限管理：</p>
+<ol>
+<li>查询权限：</li>
+</ol>
+<p>   – 查询权限<br>   SHOW GRANTS FOR ‘用户名‘@’主机名’;<br>   SHOW GRANTS FOR ‘lisi‘@’%’;</p>
+<ol start="2">
+<li>授予权限：</li>
+</ol>
+<p>   – 授予权限<br>   grant 权限列表 on 数据库名.表名 to ‘用户名‘@’主机名’;<br>   – 给张三用户授予所有权限，在任意数据库任意表上</p>
+<p>   GRANT ALL ON <em>.</em> TO ‘zhangsan‘@’localhost’;</p>
+<ol start="3">
+<li>撤销权限：</li>
+</ol>
+<p>   – 撤销权限：<br>   revoke 权限列表 on 数据库名.表名 from ‘用户名‘@’主机名’;<br>   REVOKE UPDATE ON db3.’account’ FROM ‘lisi‘@’%’;`</p>
 </li>
 </ol>
 
