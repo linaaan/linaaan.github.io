@@ -582,7 +582,7 @@
 <ul>
 <li>自动提交：<ul>
 <li>mysql就是自动提交的</li>
-<li>一条DML(增删改)语句会自动提交一次事务。</li>
+<li>一条DML（增删改）语句会自动提交一次事务。</li>
 </ul>
 </li>
 <li>手动提交：<ul>
@@ -594,7 +594,10 @@
 </li>
 <li><p>修改事务的默认提交方式：</p>
 <ul>
-<li>查看事务的默认提交方式：SELECT @@autocommit; – 1 代表自动提交  0 代表手动提交</li>
+<li>查看事务的默认提交方式：SELECT @@autocommit; </li>
+</ul>
+<p>  –    1 代表自动提交  0 代表手动提交</p>
+<ul>
 <li>修改默认提交方式： set @@autocommit = 0;</li>
 </ul>
 </li>
