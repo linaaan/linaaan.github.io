@@ -495,9 +495,7 @@
 <p> <img src="https://img14.360buyimg.com/ddimg/jfs/t1/197830/33/10387/2456214/61517aaeE275f5e28/c09fdea913e7aea7.bmp" alt="SQL分类"></p>
 </li>
 </ol>
-<h1 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL: 操作数据库、表"></a>DDL: 操作数据库、表</h1><ol>
-<li><p>操作数据库：CRUD</p>
-<ol>
+<h1 id="DDL-操作数据库、表"><a href="#DDL-操作数据库、表" class="headerlink" title="DDL: 操作数据库、表"></a>DDL: 操作数据库、表</h1><h2 id="操作数据库：CRUD"><a href="#操作数据库：CRUD" class="headerlink" title="操作数据库：CRUD"></a>操作数据库：CRUD</h2><ol>
 <li><p>C（Create）:创建</p>
 <ul>
 <li><p>创建数据库：</p>
@@ -522,8 +520,9 @@
 </li>
 </ul>
 </li>
-<li><p>R（Retrieve）：查询</p>
-<ul>
+</ol>
+<ol start="2">
+<li>R（Retrieve）：查询<ul>
 <li>查询所有数据库的名称:<ul>
 <li>show databases;</li>
 </ul>
@@ -534,16 +533,18 @@
 </li>
 </ul>
 </li>
-<li><p>U（Update）:修改</p>
-<ul>
+</ol>
+<ol start="3">
+<li>U（Update）:修改<ul>
 <li>修改数据库的字符集（gbk 和 utf8）<ul>
 <li>alter database 数据库名称 character set 字符集名称;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>D（Delete）:删除</p>
-<ul>
+</ol>
+<ol start="4">
+<li>D（Delete）:删除<ul>
 <li>删除数据库<ul>
 <li>drop database 数据库名称;</li>
 </ul>
@@ -554,8 +555,9 @@
 </li>
 </ul>
 </li>
-<li><p>使用数据库</p>
-<ul>
+</ol>
+<ol start="5">
+<li>使用数据库<ul>
 <li>查询当前正在使用的数据库名称<ul>
 <li><code>select database()</code>;</li>
 </ul>
@@ -567,11 +569,7 @@
 </ul>
 </li>
 </ol>
-</li>
-</ol>
-<ol start="2">
-<li><p>操作表</p>
-<ol>
+<h2 id="操作表"><a href="#操作表" class="headerlink" title="操作表"></a>操作表</h2><ol>
 <li><p>C（Create）:创建</p>
 <ol>
 <li>语法：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table 表名(</span><br><span class="line">  列名1 数据类型1,</span><br><span class="line">  列名2 数据类型2,</span><br><span class="line">  ....</span><br><span class="line">  列名n 数据类型n</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
@@ -612,13 +610,14 @@
 <ol start="2">
 <li>创建表<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">  id int,</span><br><span class="line">  name varchar(32),</span><br><span class="line">  age int ,</span><br><span class="line">  score double(4,1),</span><br><span class="line">  birthday date,</span><br><span class="line">  insert_time timestamp</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
 <li>复制表：<ul>
-<li>create table 表名 like 被复制的表名;          </li>
+<li>create table 表名 like 被复制的表名;    </li>
 </ul>
 </li>
 </ol>
 </li>
-<li><p>R（Retrieve）：查询</p>
-<ul>
+</ol>
+<ol start="2">
+<li>R（Retrieve）：查询<ul>
 <li>查询某个数据库中所有的表名称<ul>
 <li>show tables;</li>
 </ul>
@@ -629,8 +628,9 @@
 </li>
 </ul>
 </li>
-<li><p>U（Update）:修改</p>
-<ol>
+</ol>
+<ol start="3">
+<li>U（Update）:修改<ol>
 <li>修改表名<br>alter table 表名 rename to 新的表名;</li>
 <li>修改表的字符集<br>alter table 表名 character set 字符集名称;</li>
 <li>添加一列<br>alter table 表名 add 列名 数据类型;</li>
@@ -638,18 +638,14 @@
 <li>删除列<br>alter table 表名 drop 列名;</li>
 </ol>
 </li>
-<li><p>D（Delete）:删除</p>
-<ul>
+<li>D（Delete）:删除<ul>
 <li>drop table 表名;</li>
 <li>drop table  if exists 表名 ;</li>
 </ul>
 </li>
 </ol>
-</li>
-</ol>
 <h1 id="DML-增删改表中数据"><a href="#DML-增删改表中数据" class="headerlink" title="DML: 增删改表中数据"></a>DML: 增删改表中数据</h1><ol>
-<li><p>添加数据：</p>
-<ul>
+<li>添加数据：<ul>
 <li>语法：<ul>
 <li><code>insert into 表名(列名1,列名2,...列名n) values(值1,值2,...值n)</code>;</li>
 </ul>
@@ -662,8 +658,9 @@
 </li>
 </ul>
 </li>
-<li><p>删除数据： 删除数据但是不删除表</p>
-<ul>
+</ol>
+<ol start="2">
+<li>删除数据： 删除数据但是不删除表<ul>
 <li>语法：<ul>
 <li><code>delete from 表名 [where 条件]</code></li>
 </ul>
@@ -679,6 +676,8 @@
 </li>
 </ul>
 </li>
+</ol>
+<ol start="3">
 <li><p>修改数据：</p>
 <ul>
 <li><p>语法：</p>
@@ -796,6 +795,8 @@
 </li>
 </ul>
 </li>
+</ol>
+<ol start="3">
 <li><p>分组查询:</p>
 <ol>
 <li>语法：group by 分组字段；</li>
@@ -817,8 +818,6 @@
 <p> –  按照性别分组。分别查询男、女同学的平均分,人数 要求：分数低于70分的人，不参与分组,分组之后，只显示人数大于2个人的<br> <code>SELECT sex , AVG(math),COUNT(id) FROM student WHERE math &gt; 70 GROUP BY sex HAVING COUNT(id) &gt; 2</code>;</p>
 <p> <code>SELECT sex , AVG(math),COUNT(id) 人数 FROM student WHERE math &gt; 70 GROUP BY sex HAVING 人数 &gt; 2</code>;</p>
 </li>
-</ol>
-<ol start="4">
 <li><p>分页查询</p>
 <ol>
 <li>语法：limit 开始的<strong>索引</strong>,每页查询的条数;</li>
@@ -876,6 +875,8 @@
 <li>通配符： % 表示可以在任意主机使用用户登录数据库</li>
 </ul>
 </li>
+</ol>
+<ol start="2">
 <li><p>权限管理：</p>
 <ol>
 <li>查询权限：</li>
