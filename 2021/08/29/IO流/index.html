@@ -608,7 +608,17 @@
 
 <p>JDK9又进行优化<br>格式</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A a = new A();</span><br><span class="line">B b = new B();</span><br><span class="line">try(a;b)&#123;</span><br><span class="line">    读写数据</span><br><span class="line">&#125;catch(....)&#123;</span><br><span class="line">    .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Properties集合"><a href="#Properties集合" class="headerlink" title="Properties集合"></a>Properties集合</h1><p>Properties集合是一个唯一可以和IO流相结合的集合<br>可以对IO流进行store和load操作<br>具体需要再查</p>
+<h1 id="Properties集合"><a href="#Properties集合" class="headerlink" title="Properties集合"></a>Properties集合</h1><p>Properties集合是一个唯一可以和IO流相结合的集合<br>可以对IO流进行store和load操作</p>
+<ul>
+<li><code>public void load(InputStream inStream)</code>： 从字节输入流中读取键值对。<br>参数中使用了字节输入流，通过流对象，可以关联到某文件上，这样就能够加载文本中的数据了。文本数据格式:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">filename=a.txt</span><br><span class="line">length=209385038</span><br><span class="line">location=D:\a.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>加载代码演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class ProDemo2 &#123;</span><br><span class="line">    public static void main(String[] args) throws FileNotFoundException &#123;</span><br><span class="line">        // 创建属性集对象</span><br><span class="line">        Properties pro = new Properties();</span><br><span class="line">        // 加载文本中信息到属性集</span><br><span class="line">        pro.load(new FileInputStream(&quot;read.txt&quot;));</span><br><span class="line">        // 遍历集合并打印</span><br><span class="line">        Set&lt;String&gt; strings = pro.stringPropertyNames();</span><br><span class="line">        for (String key : strings ) &#123;</span><br><span class="line">          	System.out.println(key+&quot; -- &quot;+pro.getProperty(key));</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line">输出结果：</span><br><span class="line">filename -- a.txt</span><br><span class="line">length -- 209385038</span><br><span class="line">location -- D:\a.txt</span><br></pre></td></tr></table></figure>
+
+<p>小贴士：</p>
+<ol>
+<li>文本中的数据，必须是键值对形式，可以使用空格、等号、冒号等符号分隔。</li>
+</ol>
 <h1 id="字节字符转换问题"><a href="#字节字符转换问题" class="headerlink" title="字节字符转换问题"></a>字节字符转换问题</h1><p>文件存储是字节，字符变为字节是编码，字节变为字符是解码<br>编码解码必须是同一套charset机制</p>
 <ul>
 <li>IDEA默认的是UTF-8编码</li>
