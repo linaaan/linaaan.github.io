@@ -764,6 +764,111 @@
 说是这样操作方便控制格式，不很理解，先记住去这样用</li>
 <li>代码实现懒得写了</li>
 </ol>
+<h1 id="HTML标签：表单标签"><a href="#HTML标签：表单标签" class="headerlink" title="HTML标签：表单标签"></a>HTML标签：表单标签</h1><p>表单：概念：用于采集用户输入的数据的。用于和服务器进行交互。</p>
+<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><p>：用于定义表单的。可以定义一个范围，范围代表采集用户数据的范围</p>
+<ul>
+<li><p>属性：</p>
+<ul>
+<li>action：指定提交数据的URL</li>
+<li>method:指定提交方式<ul>
+<li>分类：一共7种，2种比较常用<ul>
+<li>get：<ol>
+<li>请求参数会在地址栏中显示。会封装到请求行中（之后会学到）。</li>
+<li>请求参数大小是有限制的。</li>
+<li>不太安全。</li>
+</ol>
+</li>
+<li>post：<ol start="2">
+<li>请求参数不会再地址栏中显示。会封装在请求体中（HTTP协议后讲解）</li>
+<li>请求参数的大小没有限制。</li>
+<li>较为安全。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>表单项中的数据要想被提交：必须指定其name属性</p>
+</li>
+</ul>
+<h2 id="表单项标签："><a href="#表单项标签：" class="headerlink" title="表单项标签："></a>表单项标签：</h2><p>包含的name属性主要是为了提交的时候来传递信息使用（提交后显示在网址部分），<strong>一定要记得写name部分</strong></p>
+<ul>
+<li><p>input：可以通过type属性值，改变元素展示的样式</p>
+<ul>
+<li><p>type属性：</p>
+<ul>
+<li><p>text：文本输入框，默认值</p>
+<ul>
+<li>placeholder：指定输入框的提示信息，当输入框的内容发生变化，会自动清空提示信息    </li>
+</ul>
+</li>
+<li><p>password：密码输入框</p>
+</li>
+<li><p>radio:单选框</p>
+<ul>
+<li>注意：<ol>
+<li>要想让多个单选框实现单选的效果，则多个单选框的name属性值必须一样。</li>
+<li>一般会给每一个单选框提供value属性，指定其被选中后提交的值</li>
+<li>checked属性，可以指定默认值<br><code>&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt; 男</code><br><code>&lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt; 女</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>checkbox：复选框</p>
+<ul>
+<li>注意：<ol>
+<li>一般会给每一个单选框提供value属性，指定其被选中后提交的值</li>
+<li>checked属性，可以指定默认值</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>file：文件选择框</p>
+</li>
+<li><p>hidden：隐藏域，用于提交一些信息。</p>
+</li>
+<li><p>按钮：</p>
+<ul>
+<li>submit：提交按钮。可以提交表单</li>
+<li>button：普通按钮，不可以提交表单，但可以有其他用途</li>
+<li>image：图片提交按钮,可以提交表单<ul>
+<li>src属性指定图片的路径    </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>email</p>
+</li>
+<li><p>date</p>
+</li>
+<li><p>number<br>等等</p>
+</li>
+</ul>
+</li>
+<li><p>label：指定输入项的文字描述信息</p>
+<ul>
+<li>注意：<ul>
+<li>label的for属性一般会和 input 的 id属性值 对应。如果对应了，则点击label区域，会让input输入框获取焦点。<br><code>&lt;label for=&quot;username&quot;&gt;用户&lt;/label&gt;: &lt;input type=&quot;text&quot; name=&quot;username&quot; placeholder=&quot;请输入用户名&quot; id=&quot;username&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>select: 下拉列表</p>
+<ul>
+<li>子元素：option，指定列表项</li>
+</ul>
+</li>
+<li><p>textarea：文本域</p>
+<ul>
+<li>cols：指定列数，每一行有多少个字符</li>
+<li>rows：默认多少行。</li>
+</ul>
+</li>
+</ul>
 
                 
             </div>
