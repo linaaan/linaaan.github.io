@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS, 呢喃">
+    <meta name="keywords" content="JavaScript基础, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSS | 呢喃</title>
+    <title>JavaScript基础 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/215651/24/2806/2237748/6180fbd6E67e48b9c/7155d7ccce3cb5e7.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.bmp.ovh/imgs/2021/11/daea4e2e71786897.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSS</h1>
+                    <h1 class="description center-align post-title">JavaScript基础</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +419,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/CSS/">
-                                <span class="chip bg-color">CSS</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-02
+                    2021-11-09
                 </div>
                 
 
@@ -470,178 +470,290 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CSS基本概念"><a href="#CSS基本概念" class="headerlink" title="CSS基本概念"></a>CSS基本概念</h1><p>页面美化和布局控制</p>
+                <h1 id="JavaScript概念："><a href="#JavaScript概念：" class="headerlink" title="JavaScript概念："></a>JavaScript概念：</h1><p>和Java语法接近，但JAVA和JavaScript实际上关系不大</p>
+<ul>
+<li><p>概念：    一门客户端脚本语言</p>
+<ul>
+<li>运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎</li>
+<li>脚本语言：不需要编译，直接就可以被浏览器解析执行了</li>
+</ul>
+</li>
+<li><p>功能：</p>
+<ul>
+<li>可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。</li>
+<li>JavaScript = ECMAScript + JavaScript自己特有的东西(BOM+DOM)</li>
+</ul>
+</li>
+</ul>
+<h1 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h1><p>ECMAScript：客户端脚本语言的标准</p>
+<h2 id="基本语法："><a href="#基本语法：" class="headerlink" title="基本语法："></a>基本语法：</h2><ol>
+<li><p>与html结合方式</p>
 <ol>
-<li><p>概念： Cascading Style Sheets 层叠样式表</p>
+<li><p>内部JS：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">* 定义&lt;script&gt;，标签体内容就是js代码</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>外部JS：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">* 定义&lt;script&gt;，通过src属性引入外部的js文件</span><br><span class="line">&lt;script src=&quot;js/a.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
 <ul>
-<li>层叠：多个样式可以作用在同一个html的元素上，同时生效</li>
+<li>注意：<ol>
+<li><code>&lt;script&gt;</code>可以定义在html页面的任何地方。但是定义的位置会影响执行顺序。</li>
+<li><code>&lt;script&gt;</code>可以定义多个。</li>
+</ol>
+</li>
 </ul>
 </li>
-<li><p>好处：</p>
+<li><p>注释</p>
 <ol>
-<li>功能强大</li>
-<li>将内容展示和样式控制分离<ul>
-<li>降低耦合度。解耦</li>
-<li>让分工协作更容易</li>
-<li>提高开发效率</li>
-</ul>
-</li>
+<li>单行注释：//注释内容</li>
+<li>多行注释：/<em>注释内容</em>/</li>
 </ol>
 </li>
-</ol>
-<h1 id="CSS的使用"><a href="#CSS的使用" class="headerlink" title="CSS的使用"></a>CSS的使用</h1><p>CSS与html结合方式</p>
+<li><p>数据类型：</p>
 <ol>
-<li>内联样式<ul>
-<li>在标签内使用style属性指定css代码</li>
-<li>如：<code>&lt;div style=&quot;color:red;&quot;&gt;hello css&lt;/div&gt;</code></li>
-</ul>
-</li>
-<li>内部样式<ul>
-<li>在head标签内，定义style标签，style标签的标签体内容就是css代码</li>
-<li>如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;style&gt;</span><br><span class="line">        div&#123;</span><br><span class="line">            color:blue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">  &lt;div&gt;hello css&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li>外部样式<ol>
-<li>定义css资源文件。新建一个css文件夹，存放css文件</li>
-<li>在head标签内，定义link标签，引入外部的资源文件<ul>
-<li>如：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  * a.css文件：</span><br><span class="line">  div&#123;</span><br><span class="line">      color:green;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;	</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;css/a.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;div&gt;hello css&lt;/div&gt;</span><br><span class="line">&lt;div&gt;hello css&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<li>原始数据类型(基本数据类型)：<ol>
+<li>number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)</li>
+<li>string：字符串。 字符串  “abc” “a” ‘abc’</li>
+<li>boolean: true和false</li>
+<li>null：一个对象为空的占位符</li>
+<li>undefined：未定义。如果一个变量没有给初始化值，则会被默认赋值为undefined</li>
 </ol>
 </li>
+<li>引用数据类型：对象（基本对象 BOM DOM）</li>
 </ol>
+</li>
+<li><p>变量</p>
 <ul>
-<li>注意：<ul>
-<li>1,2,3种方式 css作用范围越来越大</li>
-<li><strong>1方式不常用，后期常用2,3</strong></li>
-<li>第3种格式可以写为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">      @import &quot;css/a.css&quot;;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+<li>变量：一小块存储数据的内存空间</li>
+<li>Java语言是强类型语言，而JavaScript是弱类型语言。<ul>
+<li>强类型：在开辟变量存储空间时，定义了空间将来存储的数据的数据类型。只能存储固定类型的数据</li>
+<li>弱类型：在开辟变量存储空间时，不定义空间将来的存储数据类型，可以存放任意类型的数据。</li>
+</ul>
+</li>
+<li>语法：<ul>
+<li>var 变量名 = 初始化值;</li>
+</ul>
+</li>
+<li>typeof()运算符：获取变量的类型。<ul>
+<li>注：null运算后得到的是object</li>
 </ul>
 </li>
 </ul>
-<h2 id="css语法："><a href="#css语法：" class="headerlink" title="css语法："></a>css语法：</h2><ul>
-<li>格式：<br>选择器 {<br>  属性名1:属性值1;<br>  属性名2:属性值2;<br>  …<br>}</li>
-<li>选择器:筛选具有相似特征的元素</li>
-<li>注意：<ul>
-<li>每一对属性需要使用；隔开，最后一对属性可以不加；</li>
-</ul>
 </li>
-</ul>
-<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><p>：筛选具有相似特征的元素</p>
-<ul>
-<li><p>分类：</p>
+<li><p>运算符</p>
 <ol>
-<li><p>基础选择器</p>
+<li><p>一元运算符：只有一个运算数的运算符<br> ++，– ， +(正号)  </p>
+<ul>
+<li>++ –: 自增(自减)<ul>
+<li>++(–) 在前，先自增(自减)，再运算</li>
+<li>++(–) 在后，先运算，再自增(自减)</li>
+</ul>
+</li>
+<li>+(-)：正负号<ul>
+<li>注意：<strong>在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换</strong><ul>
+<li>其他类型转number：<ul>
+<li>string转number：按照字面值转换,”123”=&gt;123。如果字面值不是数字，则转为NaN（不是数字的数字）.”anc”=&gt;NaN</li>
+<li>boolean转number：true转为1，false转为0</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>算数运算符<br><code>+ - * / % ...</code></p>
+</li>
+<li><p>赋值运算符<br>= += -+….</p>
+</li>
+<li><p>比较运算符</p>
+<blockquote>
+<p>&lt; &gt;= &lt;= == ===(全等于)</p>
+</blockquote>
+<ul>
+<li>比较方式<ol>
+<li>类型相同：直接比较<ul>
+<li>字符串：按照字典顺序比较(a&gt;b)。按位逐一比较，直到得出大小为止。</li>
+</ul>
+</li>
+<li>类型不同：先进行类型转换，再比较<ul>
+<li>===：全等于。在比较之前，先判断类型，如果类型不一样，则直接返回false</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>逻辑运算符<br>&amp;&amp; || !</p>
+<ul>
+<li>其他类型转boolean：<pre><code>      1. number：0或NaN为假，其他为真
+      2. string：除了空字符串(&quot;&quot;)，其他都是true
+      3. null&amp;undefined:都是false
+      4. 对象：所有对象都为true
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>三元运算符<br>? : 表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 3;</span><br><span class="line">    var b = 4;</span><br><span class="line"></span><br><span class="line">    var c = a &gt; b ? 1:0;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>语法：<ul>
+<li>表达式? 值1:值2;</li>
+<li>判断表达式的值，如果是true则取值1，如果是false则取值2；</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>流程控制语句：</p>
 <ol>
-<li><p>id选择器：选择具体的id属性值的元素.建议在一个html页面中id值唯一</p>
-<ul>
-<li>语法：#id属性值{}<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#div1&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;div1&quot;&gt;你好&lt;/div&gt;</span><br></pre></td></tr></table></figure></li>
+<li>if…else…</li>
+<li>switch:<ul>
+<li>在java中，switch语句的case值可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)<ul>
+<li>switch(变量):<br>case 值:</li>
 </ul>
 </li>
-<li><p>元素选择器：选择具有相同标签名称的元素，例如所有div标签</p>
-<ul>
-<li>语法： 标签名称{}</li>
-<li>注意：id选择器优先级高于元素选择器</li>
+<li>在JS中,switch语句的case值可以接受任意的原始数据类型</li>
 </ul>
 </li>
-<li><p>类选择器：选择具有相同的class属性值的元素。</p>
-<ul>
-<li>语法：.class属性值{}</li>
-<li>注意：类选择器选择器优先级高于元素选择器<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.cls1&#123;...&#125;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;cls1&quot;&gt;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
+<li>while</li>
+<li>do…while</li>
+<li>for</li>
 </ol>
 </li>
-<li><p>扩展选择器：</p>
+<li><p>JS特殊语法：</p>
 <ol>
-<li><p>选择所有元素：</p>
-<ul>
-<li>语法： *{}</li>
-</ul>
-</li>
-<li><p>并集选择器：</p>
-<ul>
-<li>选择器1,选择器2{}</li>
-</ul>
-</li>
-<li><p>子选择器：筛选选择器1元素下的所有选择器2</p>
-<ul>
-<li>语法：  选择器1 选择器2{}</li>
-</ul>
-</li>
-<li><p>父选择器：筛选属于选择器1<strong>子元素</strong>的所有选择器2</p>
-<ul>
-<li>语法：  选择器1 &gt; 选择器2{}</li>
-</ul>
-</li>
-<li><p>属性选择器：选择元素名称，属性名=属性值的元素</p>
-<ul>
-<li>语法：  <code>元素名称[属性名=&quot;属性值&quot;]&#123;&#125;</code><br>  <code>input[type=&quot;text&quot;]&#123;...&#125;</code></li>
-</ul>
-</li>
-<li><p>伪类选择器：选择一些元素具有的状态</p>
-<ul>
-<li>语法： 元素:状态{}<br>如： <code>a:状态&#123;&#125;</code></li>
-<li>状态：<ul>
-<li>link：初始化的状态（超链接还没有被访问）</li>
-<li>visited：被访问过的状态</li>
-<li>active：正在访问状态（例如超链接按住不松手）</li>
-<li>hover：鼠标悬浮状态</li>
-</ul>
-</li>
+<li>语句以;结尾，如果一行只有一条语句则 ;可以省略 (不建议)</li>
+<li>变量的定义使用var关键字，也可以不使用<ul>
+<li>用： 定义的变量是局部变量</li>
+<li>不用：定义的变量是全局变量(不建议)</li>
 </ul>
 </li>
 </ol>
 </li>
 </ol>
-</li>
-</ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><ol>
-<li><p>字体、文本</p>
-<ul>
-<li>font-size：字体大小</li>
-<li>color：文本颜色</li>
-<li>text-align：对其方式</li>
-<li>line-height：行高 </li>
-</ul>
-</li>
-<li><p>背景</p>
-<ul>
-<li><code>background：url(...)</code></li>
-</ul>
-</li>
-<li><p>边框</p>
-<ul>
-<li>border：设置边框，复合属性<br>border：1px solid red</li>
-</ul>
-</li>
-<li><p>尺寸</p>
-<ul>
-<li>width：宽度</li>
-<li>height：高度</li>
-</ul>
-</li>
-<li><p>盒子模型：控制布局</p>
-<ul>
-<li><p>margin：外边距</p>
-</li>
-<li><p>padding：内边距</p>
-<ul>
-<li>默认情况下内边距会影响整个盒子的大小</li>
-<li>box-sizing: border-box;  设置盒子的属性，让width和height就是最终盒子的大小，此时内边距不再影响盒子的大小</li>
-</ul>
-</li>
-<li><p>float：浮动</p>
-<ul>
-<li>left</li>
-<li>right</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="案例："><a href="#案例：" class="headerlink" title="案例："></a>案例：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;注册页面&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    *&#123;</span><br><span class="line">        margin: 0px;</span><br><span class="line">        padding: 0px;</span><br><span class="line">        box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">    body&#123;</span><br><span class="line">        background: url(&quot;img/register_bg.png&quot;) no-repeat center;</span><br><span class="line">        padding-top: 25px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .rg_layout&#123;</span><br><span class="line">        width: 900px;</span><br><span class="line">        height: 500px;</span><br><span class="line">        border: 8px solid #EEEEEE;</span><br><span class="line">        background-color: white;</span><br><span class="line">        /*让div水平居中*/</span><br><span class="line">        margin: auto;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .rg_left&#123;</span><br><span class="line">        /*border: 1px solid red;*/</span><br><span class="line">        float: left;</span><br><span class="line">        margin: 15px;</span><br><span class="line">    &#125;</span><br><span class="line">    .rg_left &gt; p:first-child&#123;</span><br><span class="line">        color:#FFD026;</span><br><span class="line">        font-size: 20px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .rg_left &gt; p:last-child&#123;</span><br><span class="line">        color:#A6A6A6;</span><br><span class="line">        font-size: 20px;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    .rg_center&#123;</span><br><span class="line">        float: left;</span><br><span class="line">        /* border: 1px solid red;*/</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .rg_right&#123;</span><br><span class="line">        /*border: 1px solid red;*/</span><br><span class="line">        float: right;</span><br><span class="line">        margin: 15px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .rg_right &gt; p:first-child&#123;</span><br><span class="line">        font-size: 15px;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    .rg_right p a &#123;</span><br><span class="line">        color:pink;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    .td_left&#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        text-align: right;</span><br><span class="line">        height: 45px;</span><br><span class="line">    &#125;</span><br><span class="line">    .td_right&#123;</span><br><span class="line">        padding-left: 50px ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #username,#password,#email,#name,#tel,#birthday,#checkcode&#123;</span><br><span class="line">        width: 251px;</span><br><span class="line">        height: 32px;</span><br><span class="line">        border: 1px solid #A6A6A6 ;</span><br><span class="line">        /*设置边框圆角*/</span><br><span class="line">        border-radius: 5px;</span><br><span class="line">        padding-left: 10px;</span><br><span class="line">    &#125;</span><br><span class="line">    #checkcode&#123;</span><br><span class="line">        width: 110px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #img_check&#123;</span><br><span class="line">        height: 32px;</span><br><span class="line">        vertical-align: middle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    #btn_sub&#123;</span><br><span class="line">        width: 150px;</span><br><span class="line">        height: 40px;</span><br><span class="line">        background-color: #FFD026;</span><br><span class="line">        border: 1px solid #FFD026 ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;rg_layout&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;rg_left&quot;&gt;</span><br><span class="line">        &lt;p&gt;新用户注册&lt;/p&gt;</span><br><span class="line">        &lt;p&gt;USER REGISTER&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;rg_center&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;rg_form&quot;&gt;</span><br><span class="line">            &lt;!--定义表单 form--&gt;</span><br><span class="line">            &lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;</span><br><span class="line">                &lt;table&gt;</span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;username&quot;&gt;用户名&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; placeholder=&quot;请输入用户名&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;password&quot;&gt;密码&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot; placeholder=&quot;请输入密码&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; placeholder=&quot;请输入邮箱&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;name&quot;&gt;姓名&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;name&quot; id=&quot;name&quot; placeholder=&quot;请输入姓名&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;tel&quot;&gt;手机号&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;tel&quot; id=&quot;tel&quot; placeholder=&quot;请输入手机号&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label&gt;性别&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;</span><br><span class="line">                            &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;male&quot;&gt; 男</span><br><span class="line">                            &lt;input type=&quot;radio&quot; name=&quot;gender&quot; value=&quot;female&quot;&gt; 女</span><br><span class="line">                        &lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;birthday&quot;&gt;出生日期&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;date&quot; name=&quot;birthday&quot; id=&quot;birthday&quot; placeholder=&quot;请输入出生日期&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td class=&quot;td_left&quot;&gt;&lt;label for=&quot;checkcode&quot; &gt;验证码&lt;/label&gt;&lt;/td&gt;</span><br><span class="line">                        &lt;td class=&quot;td_right&quot;&gt;&lt;input type=&quot;text&quot; name=&quot;checkcode&quot; id=&quot;checkcode&quot; placeholder=&quot;请输入验证码&quot;&gt;</span><br><span class="line">                            &lt;img id=&quot;img_check&quot; src=&quot;img/verify_code.jpg&quot;&gt;</span><br><span class="line">                        &lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;&lt;input type=&quot;submit&quot; id=&quot;btn_sub&quot; value=&quot;注册&quot;&gt;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line">                &lt;/table&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;rg_right&quot;&gt;</span><br><span class="line">        &lt;p&gt;已有账号?&lt;a href=&quot;#&quot;&gt;立即登录&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="练习：99乘法表"><a href="#练习：99乘法表" class="headerlink" title="练习：99乘法表"></a>练习：99乘法表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;99乘法表&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        td&#123;</span><br><span class="line">            border: 1px solid;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;table  align=&#x27;center&#x27;&gt;&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //1.完成基本的for循环嵌套，展示乘法表</span><br><span class="line">        for (var i = 1; i &lt;= 9 ; i++) &#123;</span><br><span class="line">            document.write(&quot;&lt;tr&gt;&quot;);</span><br><span class="line">            for (var j = 1; j &lt;=i ; j++) &#123;</span><br><span class="line">                document.write(&quot;&lt;td&gt;&quot;);</span><br><span class="line"></span><br><span class="line">                //输出  1 * 1 = 1</span><br><span class="line">                document.write(i + &quot; * &quot; + j + &quot; = &quot; + ( i*j) +&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);</span><br><span class="line"></span><br><span class="line">                document.write(&quot;&lt;/td&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            /*//输出换行</span><br><span class="line">            document.write(&quot;&lt;br&gt;&quot;);*/</span><br><span class="line"></span><br><span class="line">            document.write(&quot;&lt;/tr&gt;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //2.完成表格嵌套</span><br><span class="line">        document.write(&quot;&lt;/table&gt;&quot;);</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
-<p>效果图<br><img src="https://img12.360buyimg.com/ddimg/jfs/t1/6112/19/20760/2765240/61822227E766ff596/674e92faa6e549bb.png" alt="image.png"></p>
+<h2 id="基本对象："><a href="#基本对象：" class="headerlink" title="基本对象："></a>基本对象：</h2><ol>
+<li><p>Function：函数(方法)对象</p>
+<ol>
+<li><p>创建：</p>
+<ol>
+<li><code>var fun = new Function(形式参数列表,方法体)</code>;  //忘掉吧</li>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function 方法名称(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var 方法名 = function(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>方法：</p>
+</li>
+<li><p>属性：<br> length:代表形参的个数 fun.length</p>
+</li>
+<li><p>特点：</p>
+<ol>
+<li>方法定义时，形参的类型不用写,返回值类型也不写。</li>
+<li>方法是一个对象，如果定义名称相同的方法，会覆盖</li>
+<li>在JS中，方法的调用只与方法的名称有关，和参数列表无关（即有两个参数，只给一个参数赋值，另一个参数不管，系统会默认赋值该参数为undefined，仍可以成功调用方法）</li>
+<li>在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数，可以在方法内部调用arguments</li>
+</ol>
+</li>
+<li><p>调用：<br> 方法名称(实际参数列表);</p>
+</li>
+</ol>
+</li>
+<li><p>Array:数组对象</p>
+<ol>
+<li>创建：<ol>
+<li><code>var arr = new Array(元素列表)</code>;</li>
+<li><code>var arr = new Array(默认长度)</code>;</li>
+<li><code>var arr = [元素列表]</code>;</li>
+</ol>
+</li>
+<li>方法<br> join(分隔符):将数组中的元素按照指定的分隔符拼接为字符串 <code>arr.join(&quot;--&quot;)</code><br> push()    向数组的末尾添加一个或更多元素，并返回新的长度。</li>
+<li>属性<br> length:数组的长度</li>
+<li>特点：<ol>
+<li>JS中，数组元素的类型可变的。</li>
+<li>JS中，数组长度可变的。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Boolean</p>
+</li>
+<li><p>Date：日期对象</p>
+<ol>
+<li><p>创建：<br> <code>var date = new Date()</code>;</p>
+</li>
+<li><p>方法：<br> <code>toLocaleString()</code>：返回当前date对象对应的时间本地字符串格式<br> <code>getTime()</code>:获取毫秒值。返回当前如期对象描述的时间到1970年1月1日零点的毫秒值差</p>
+</li>
+</ol>
+</li>
+<li><p>Math：数学对象</p>
+<ol>
+<li><p>创建：</p>
+<ul>
+<li>特点：Math对象不用创建，直接使用。  <code>Math.方法名()</code>;</li>
+</ul>
+</li>
+<li><p>方法：<br> <code>random()</code>:返回 0 ~ 1 之间的随机数。 含0不含1<br> <code>ceil(x)</code>：对数进行上舍入。<br> <code>floor(x)</code>：对数进行下舍入。<br> <code>round(x)</code>：把数四舍五入为最接近的整数。</p>
+</li>
+<li><p>属性：<br> PI Math.PI</p>
+</li>
+</ol>
+</li>
+<li><p>Number</p>
+</li>
+<li><p>String</p>
+</li>
+<li><p>RegExp：正则表达式对象</p>
+<ol>
+<li><p>正则表达式：<strong>定义字符串的组成规则</strong>。</p>
+<ol>
+<li>单个字符:[]<br>如： [a] [ab] [a-zA-Z0-9_]<ul>
+<li>特殊符号代表特殊含义的单个字符:<br>\d:单个数字字符 [0-9]<br>\w:单个单词字符[a-zA-Z0-9_]</li>
+</ul>
+</li>
+<li>量词符号：<br>?：表示出现0次或1次</li>
+</ol>
+<p>   *：表示出现0次或多次<br>   +：出现1次或多次<br>   {m,n}:表示 m&lt;= 数量 &lt;= n</p>
+<pre><code> * m如果缺省： &#123;,n&#125;:最多n次
+ * n如果缺省：&#123;m,&#125; 最少m次
+
+ \w&#123;6,12&#125;
+</code></pre>
+<ol start="3">
+<li>开始结束符号<ul>
+<li>^:开始</li>
+<li>$:结束</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>正则对象：</p>
+<ol>
+<li>创建<ol>
+<li><code>var reg = new RegExp(&quot;正则表达式&quot;)</code>;<br><code>var reg = new RegExp(&quot;^\\w(6,12)$&quot;)</code><br>字符串里防止转义，需要\</li>
+<li><code>var reg = /正则表达式/</code>;<br><code>var reg = /^\w(6,12)$/</code></li>
+</ol>
+</li>
+<li>方法    </li>
+<li><code>test(参数)</code>:验证指定的字符串是否符合正则定义的规范    <code>reg.test(字符串)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Global</p>
+<ol>
+<li>特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  <code>方法名()</code>;</li>
+<li>方法：<br><code>encodeURI()</code>:url编码<br><code>var encode = encodeURI(str)</code><br><code>decodeURI()</code>:url解码</li>
+</ol>
+<p> <code>encodeURIComponent()</code>:url编码,编码的字符更多<br> <code>decodeURIComponent()</code>:url解码</p>
+<p> <code>parseInt()</code>:将字符串转为数字<br> 逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number,后边不是数字的不转换也不显示<br> 123abc =&gt; 123</p>
+<p> <code>isNaN()</code>:判断一个值是否是NaN<br> NaN六亲不认，连自己都不认。NaN参与的==比较全部为false<br> NaN == NaN =&gt; false</p>
+<p> <code>eval()</code>:将 JavaScript 字符串，并把它作为脚本代码来执行。<br> <code>eval(&quot;alert(123)&quot;)</code> =&gt; 执行<code>alert(123)</code></p>
+<ol start="3">
+<li>URL编码<br>传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2</li>
+</ol>
+</li>
+</ol>
 
                 
             </div>
@@ -668,7 +780,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://linaaan.githun.io/2021/11/02/CSS/">https://linaaan.githun.io/2021/11/02/CSS/</a>
+                    <a href="https://linaaan.githun.io/2021/11/09/JavaScript%E5%9F%BA%E7%A1%80/">https://linaaan.githun.io/2021/11/09/JavaScript%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -706,8 +818,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/CSS/">
-                                    <span class="chip bg-color">CSS</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -751,9 +863,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/11/09/JavaScript%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
@@ -770,9 +883,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -785,6 +898,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -803,23 +917,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/29/HTML/">
+                <a href="/2021/11/02/CSS/">
                     <div class="card-image">
                         
-                        <img src="https://img12.360buyimg.com/ddimg/jfs/t1/142878/15/21033/888196/617bb61cEa4c9ad3c/70fc0fb4ead2f331.png" class="responsive-img" alt="HTML">
+                        <img src="https://img10.360buyimg.com/ddimg/jfs/t1/215651/24/2806/2237748/6180fbd6E67e48b9c/7155d7ccce3cb5e7.png" class="responsive-img" alt="CSS">
                         
-                        <span class="card-title">HTML</span>
+                        <span class="card-title">CSS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            挺有意思，简单了解
+                            简单学习
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-02
                             </span>
                         <span class="publish-author">
                             
@@ -836,8 +950,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
