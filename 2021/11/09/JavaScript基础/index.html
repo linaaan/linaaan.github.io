@@ -298,7 +298,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://i.bmp.ovh/imgs/2021/11/daea4e2e71786897.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img14.360buyimg.com/ddimg/jfs/t1/156711/35/24828/3028727/6191183fE54206941/4d680af79496483f.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -481,7 +481,7 @@
 <li><p>功能：</p>
 <ul>
 <li>可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。</li>
-<li>JavaScript = ECMAScript + JavaScript自己特有的东西(BOM+DOM)</li>
+<li>JavaScript = ECMAScript + JavaScript自己特有的东西（BOM+DOM）</li>
 </ul>
 </li>
 </ul>
@@ -510,8 +510,8 @@
 </li>
 <li><p>数据类型：</p>
 <ol>
-<li>原始数据类型(基本数据类型)：<ol>
-<li>number：数字。 整数/小数/NaN(not a number 一个不是数字的数字类型)</li>
+<li>原始数据类型（基本数据类型）：<ol>
+<li>number：数字。 整数/小数/NaN（not a number 一个不是数字的数字类型）</li>
 <li>string：字符串。 字符串  “abc” “a” ‘abc’</li>
 <li>boolean: true和false</li>
 <li>null：一个对象为空的占位符</li>
@@ -541,17 +541,17 @@
 </li>
 <li><p>运算符</p>
 <ol>
-<li><p>一元运算符：只有一个运算数的运算符<br> ++，– ， +(正号)  </p>
+<li><p>一元运算符：只有一个运算数的运算符<br> ++，- - ， +（正号）  </p>
 <ul>
-<li>++ –: 自增(自减)<ul>
-<li>++(–) 在前，先自增(自减)，再运算</li>
-<li>++(–) 在后，先运算，再自增(自减)</li>
+<li>++ - -: 自增（自减）<ul>
+<li>++（- -） 在前，先自增（自减），再运算</li>
+<li>++（- -） 在后，先运算，再自增（自减）</li>
 </ul>
 </li>
-<li>+(-)：正负号<ul>
+<li>+（-）：正负号<ul>
 <li>注意：<strong>在JS中，如果运算数不是运算符所要求的类型，那么js引擎会自动的将运算数进行类型转换</strong><ul>
 <li>其他类型转number：<ul>
-<li>string转number：按照字面值转换,”123”=&gt;123。如果字面值不是数字，则转为NaN（不是数字的数字）.”anc”=&gt;NaN</li>
+<li>string转number：按照字面值转换,”123”=&gt;123。如果字面值不是数字，则转为NaN（不是数字的数字）。”anc”=&gt;NaN</li>
 <li>boolean转number：true转为1，false转为0</li>
 </ul>
 </li>
@@ -567,12 +567,12 @@
 </li>
 <li><p>比较运算符</p>
 <blockquote>
-<p>&lt; &gt;= &lt;= == ===(全等于)</p>
+<p>&lt; &gt;= &lt;= == ===（全等于）</p>
 </blockquote>
 <ul>
 <li>比较方式<ol>
 <li>类型相同：直接比较<ul>
-<li>字符串：按照字典顺序比较(a&gt;b)。按位逐一比较，直到得出大小为止。</li>
+<li>字符串：按照字典顺序比较（a&gt;b）。按位逐一比较，直到得出大小为止。</li>
 </ul>
 </li>
 <li>类型不同：先进行类型转换，再比较<ul>
@@ -585,11 +585,12 @@
 </li>
 <li><p>逻辑运算符<br>&amp;&amp; || !</p>
 <ul>
-<li>其他类型转boolean：<pre><code>      1. number：0或NaN为假，其他为真
-      2. string：除了空字符串(&quot;&quot;)，其他都是true
-      3. null&amp;undefined:都是false
-      4. 对象：所有对象都为true
-</code></pre>
+<li>其他类型转boolean：<ol>
+<li>number：0或NaN为假，其他为真</li>
+<li>string：除了空字符串(“”)，其他都是true</li>
+<li>null&amp;undefined:都是false</li>
+<li>对象：所有对象都为true</li>
+</ol>
 </li>
 </ul>
 </li>
@@ -608,8 +609,8 @@
 <ol>
 <li>if…else…</li>
 <li>switch:<ul>
-<li>在java中，switch语句的case值可以接受的数据类型： byte int shor char,枚举(1.5) ,String(1.7)<ul>
-<li>switch(变量):<br>case 值:</li>
+<li>在java中，switch语句的case值可以接受的数据类型： byte int short char,枚举（1.5） ,String（1.7）<ul>
+<li>switch（变量）:<br>case 值:</li>
 </ul>
 </li>
 <li>在JS中,switch语句的case值可以接受任意的原始数据类型</li>
@@ -622,10 +623,10 @@
 </li>
 <li><p>JS特殊语法：</p>
 <ol>
-<li>语句以;结尾，如果一行只有一条语句则 ;可以省略 (不建议)</li>
+<li>语句以 ; 结尾，如果一行只有一条语句则 ;可以省略 （不建议）</li>
 <li>变量的定义使用var关键字，也可以不使用<ul>
 <li>用： 定义的变量是局部变量</li>
-<li>不用：定义的变量是全局变量(不建议)</li>
+<li>不用：定义的变量是全局变量（不建议）</li>
 </ul>
 </li>
 </ol>
@@ -634,13 +635,16 @@
 <h3 id="练习：99乘法表"><a href="#练习：99乘法表" class="headerlink" title="练习：99乘法表"></a>练习：99乘法表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;99乘法表&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        td&#123;</span><br><span class="line">            border: 1px solid;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line"></span><br><span class="line">        document.write(&quot;&lt;table  align=&#x27;center&#x27;&gt;&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        //1.完成基本的for循环嵌套，展示乘法表</span><br><span class="line">        for (var i = 1; i &lt;= 9 ; i++) &#123;</span><br><span class="line">            document.write(&quot;&lt;tr&gt;&quot;);</span><br><span class="line">            for (var j = 1; j &lt;=i ; j++) &#123;</span><br><span class="line">                document.write(&quot;&lt;td&gt;&quot;);</span><br><span class="line"></span><br><span class="line">                //输出  1 * 1 = 1</span><br><span class="line">                document.write(i + &quot; * &quot; + j + &quot; = &quot; + ( i*j) +&quot;&amp;nbsp;&amp;nbsp;&amp;nbsp;&quot;);</span><br><span class="line"></span><br><span class="line">                document.write(&quot;&lt;/td&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            /*//输出换行</span><br><span class="line">            document.write(&quot;&lt;br&gt;&quot;);*/</span><br><span class="line"></span><br><span class="line">            document.write(&quot;&lt;/tr&gt;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //2.完成表格嵌套</span><br><span class="line">        document.write(&quot;&lt;/table&gt;&quot;);</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="基本对象："><a href="#基本对象：" class="headerlink" title="基本对象："></a>基本对象：</h2><ol>
-<li><p>Function：函数(方法)对象</p>
+<li><p>Function：函数（方法）对象</p>
 <ol>
 <li><p>创建：</p>
 <ol>
-<li><code>var fun = new Function(形式参数列表,方法体)</code>;  //忘掉吧</li>
-<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function 方法名称(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
-<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var 方法名 = function(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>var fun = new Function(形式参数列表,方法体)</code>;  //忘掉吧</p>
+</li>
+<li><p>形式二</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function 方法名称(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>形式三</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var 方法名 = function(形式参数列表)&#123;</span><br><span class="line">      方法体</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 </li>
 <li><p>方法：</p>
@@ -652,10 +656,10 @@
 <li>方法定义时，形参的类型不用写,返回值类型也不写。</li>
 <li>方法是一个对象，如果定义名称相同的方法，会覆盖</li>
 <li>在JS中，方法的调用只与方法的名称有关，和参数列表无关（即有两个参数，只给一个参数赋值，另一个参数不管，系统会默认赋值该参数为undefined，仍可以成功调用方法）</li>
-<li>在方法声明中有一个隐藏的内置对象（数组），arguments,封装所有的实际参数，可以在方法内部调用arguments</li>
+<li>在方法声明中有一个隐藏的内置对象（数组）arguments,封装所有的实际参数，可以在方法内部调用arguments</li>
 </ol>
 </li>
-<li><p>调用：<br> 方法名称(实际参数列表);</p>
+<li><p>调用：<br> 方法名称（实际参数列表）;</p>
 </li>
 </ol>
 </li>
@@ -667,7 +671,7 @@
 <li><code>var arr = [元素列表]</code>;</li>
 </ol>
 </li>
-<li>方法<br> join(分隔符):将数组中的元素按照指定的分隔符拼接为字符串 <code>arr.join(&quot;--&quot;)</code><br> push()    向数组的末尾添加一个或更多元素，并返回新的长度。</li>
+<li>方法<br> <code>join(分隔符)</code>:将数组中的元素按照指定的分隔符拼接为字符串 <code>arr.join(&quot;--&quot;)</code><br> <code>push()</code>:    向数组的末尾添加一个或更多元素，并返回新的长度。</li>
 <li>属性<br> length:数组的长度</li>
 <li>特点：<ol>
 <li>JS中，数组元素的类型可变的。</li>
@@ -707,20 +711,25 @@
 <ol>
 <li><p>正则表达式：<strong>定义字符串的组成规则</strong>。</p>
 <ol>
-<li>单个字符:[]<br>如： [a] [ab] [a-zA-Z0-9_]<ul>
+<li><p>单个字符:[]<br>如： [a] [ab] [a-zA-Z0-9_]</p>
+<ul>
 <li>特殊符号代表特殊含义的单个字符:<br>\d:单个数字字符 [0-9]<br>\w:单个单词字符[a-zA-Z0-9_]</li>
 </ul>
 </li>
-<li>量词符号：<br>?：表示出现0次或1次</li>
-</ol>
-<p>   *：表示出现0次或多次<br>   +：出现1次或多次<br>   {m,n}:表示 m&lt;= 数量 &lt;= n</p>
-<pre><code> * m如果缺省： &#123;,n&#125;:最多n次
- * n如果缺省：&#123;m,&#125; 最少m次
-
- \w&#123;6,12&#125;
-</code></pre>
-<ol start="3">
-<li>开始结束符号<ul>
+<li><p>量词符号：</p>
+<ul>
+<li>?：表示出现0次或1次</li>
+<li>*：表示出现0次或多次</li>
+<li>+：出现1次或多次</li>
+<li>{m,n}:表示 m&lt;= 数量 &lt;= n<ul>
+<li>m如果缺省： {,n}:最多n次</li>
+<li>n如果缺省：{m,} 最少m次<br>\w{6,12}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>开始结束符号</p>
+<ul>
 <li>^:开始</li>
 <li>$:结束</li>
 </ul>
@@ -734,23 +743,42 @@
 <li><code>var reg = /正则表达式/</code>;<br><code>var reg = /^\w(6,12)$/</code></li>
 </ol>
 </li>
-<li>方法    </li>
+<li>方法    <ul>
 <li><code>test(参数)</code>:验证指定的字符串是否符合正则定义的规范    <code>reg.test(字符串)</code></li>
+</ul>
+</li>
 </ol>
 </li>
 </ol>
 </li>
 <li><p>Global</p>
 <ol>
-<li>特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  <code>方法名()</code>;</li>
-<li>方法：<br><code>encodeURI()</code>:url编码<br><code>var encode = encodeURI(str)</code><br><code>decodeURI()</code>:url解码</li>
-</ol>
-<p> <code>encodeURIComponent()</code>:url编码,编码的字符更多<br> <code>decodeURIComponent()</code>:url解码</p>
-<p> <code>parseInt()</code>:将字符串转为数字<br> 逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number,后边不是数字的不转换也不显示<br> 123abc =&gt; 123</p>
-<p> <code>isNaN()</code>:判断一个值是否是NaN<br> NaN六亲不认，连自己都不认。NaN参与的==比较全部为false<br> NaN == NaN =&gt; false</p>
-<p> <code>eval()</code>:将 JavaScript 字符串，并把它作为脚本代码来执行。<br> <code>eval(&quot;alert(123)&quot;)</code> =&gt; 执行<code>alert(123)</code></p>
-<ol start="3">
-<li>URL编码<br>传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2</li>
+<li><p>特点：全局对象，这个Global中封装的方法不需要对象就可以直接调用。  <code>方法名()</code>;</p>
+</li>
+<li><p>方法：</p>
+<ul>
+<li><p><code>encodeURI()</code>:url编码</p>
+</li>
+<li><p><code>var encode = encodeURI(str)</code></p>
+</li>
+<li><p><code>decodeURI()</code>:url解码</p>
+</li>
+<li><p><code>encodeURIComponent()</code>:url编码,编码的字符更多</p>
+</li>
+<li><p><code>decodeURIComponent()</code>:url解码</p>
+</li>
+<li><p><code>parseInt()</code>:将字符串转为数字<br>逐一判断每一个字符是否是数字，直到不是数字为止，将前边数字部分转为number,后边不是数字的不转换也不显示<br>123abc =&gt; 123</p>
+</li>
+<li><p><code>isNaN()</code>:判断一个值是否是NaN<br>NaN六亲不认，连自己都不认。NaN参与的==比较全部为false<br>NaN == NaN =&gt; false</p>
+</li>
+<li><p><code>eval()</code>:将 JavaScript 字符串，并把它作为脚本代码来执行。</p>
+</li>
+<li><p><code>eval(&quot;alert(123)&quot;)</code> =&gt; 执行<code>alert(123)</code></p>
+</li>
+</ul>
+</li>
+<li><p>URL编码<br>传智播客 =  %E4%BC%A0%E6%99%BA%E6%92%AD%E5%AE%A2</p>
+</li>
 </ol>
 </li>
 </ol>
@@ -871,7 +899,7 @@
                 <a href="/2021/11/09/JavaScript%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
-                        <img src="https://i.bmp.ovh/imgs/2021/11/daea4e2e71786897.png" class="responsive-img" alt="JavaScript基础">
+                        <img src="https://img14.360buyimg.com/ddimg/jfs/t1/156711/35/24828/3028727/6191183fE54206941/4d680af79496483f.png" class="responsive-img" alt="JavaScript基础">
                         
                         <span class="card-title">JavaScript基础</span>
                     </div>
