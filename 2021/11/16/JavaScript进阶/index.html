@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="网络编程案例, 呢喃">
+    <meta name="keywords" content="JavaScript进阶, 呢喃">
     <meta name="description" content="梦没有终点">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>网络编程案例 | 呢喃</title>
+    <title>JavaScript进阶 | 呢喃</title>
     <link rel="icon" type="image/png" href="/fufu.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -298,12 +298,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img10.360buyimg.com/ddimg/jfs/t1/60560/3/17385/4840735/61401ef5Eaa26bff2/cee177e695832b32.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://z3.ax1x.com/2021/11/16/Ifsd9U.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">网络编程案例</h1>
+                    <h1 class="description center-align post-title">JavaScript进阶</h1>
                 </div>
             </div>
         </div>
@@ -419,8 +419,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                                <span class="chip bg-color">网络编程</span>
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
                             </a>
                         
                     </div>
@@ -431,8 +431,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category">
-                                Java
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                JavaWeb
                             </a>
                         
                     </div>
@@ -444,7 +444,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-09-14
+                    2021-11-16
                 </div>
                 
 
@@ -470,48 +470,309 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><font size="7">文件上传案例分析</font></p>
-<h1 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h1><p>文件上传案例的客户端：读取本地文件，上传到服务器，读取服务器回写的数据<br>实现步骤</p>
-<ol>
-<li>创建一个本地字节输入流FileInputStream对象，构造方法中绑定要读取的数据源</li>
-<li>创建一个客户端socket对象，构造方法中绑定服务器的IP地址和端口号</li>
-<li>使用Socket对象中的方法<code>getOutputStream()</code>获取网络字节输出流OutputStream对象</li>
-<li>使用本地字节输入流FileInputStream对象中的方法read，读取本地文件</li>
-<li>使用网络字节输出流OutputStream对象中的方法write，把读取到的文件上传到服务器</li>
-<li>使用Socket对象中的方法<code>getInputStream()</code>获取网络字节输入流InputStream对象</li>
-<li>使用网络字节输入流InputStream对象的方法read，读取服务器回写数据</li>
-<li>释放资源（FileInputStream，Socket）</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class DemoUploadClient &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        FileInputStream fis = new FileInputStream(&quot;D:\\JavaProject\\Client\\1.png&quot;);</span><br><span class="line">        InetAddress dstAddress;</span><br><span class="line">        Socket socket = new Socket(&quot;10.128.196.110&quot;,8888);</span><br><span class="line">        OutputStream outputStream = socket.getOutputStream();</span><br><span class="line">        int len = 0;</span><br><span class="line">        byte[] bytes = new byte[1024];</span><br><span class="line">        while ((len = fis.read(bytes))!=-1)&#123;</span><br><span class="line">            outputStream.write(bytes,0,len);</span><br><span class="line">        &#125;</span><br><span class="line">        socket.shutdownOutput();</span><br><span class="line">        // 给服务器上传一个终止序列，解决无法停止bug</span><br><span class="line">        InputStream inputStream = socket.getInputStream();</span><br><span class="line">        while ((len = inputStream.read(bytes))!=-1)&#123;</span><br><span class="line">            System.out.println(new String(bytes,0,len));</span><br><span class="line">        &#125;</span><br><span class="line">        fis.close();</span><br><span class="line">        socket.close();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+                <h1 id="今日内容："><a href="#今日内容：" class="headerlink" title="今日内容："></a>今日内容：</h1><pre><code>1. JavaScript：
+    1. ECMAScript：
+    2. BOM：
+    3. DOM：
+        1. 事件
+</code></pre>
+<h2 id="DOM简单学习：为了满足案例要求"><a href="#DOM简单学习：为了满足案例要求" class="headerlink" title="DOM简单学习：为了满足案例要求"></a>DOM简单学习：为了满足案例要求</h2><pre><code>* 功能：控制html文档的内容
+* 获取页面标签(元素)对象：Element
+    * document.getElementById(&quot;id值&quot;):通过元素的id获取元素对象
 
-<h1 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h1><p>文件上传案例的服务器端：读取客户端上传的文件，保存到服务器的硬盘，给客户端回写上传成功<br>实现步骤</p>
-<ol>
-<li>创建服务器ServerSocket对象和系统要指定的端口号</li>
-<li>使用ServerSocket对象中的方法accept，获取到请求的客户端对象Socket,接下来使用此Socket的方法</li>
-<li>使用Socket对象中的方法getInputStream()获取网络字节输入流InputStream对象</li>
-<li>判断目标文件夹是否存在，不存在则创建</li>
-<li>创建一个本地字节输出流FileOutputStream对象，构造方法中绑定要输出的目的地</li>
-<li>使用网络字节输入流InputStream对象的方法read，读取客户端上传的文件</li>
-<li>使用本地字节输出流FileOutputStream对象中的方法write，把读取到文件保存到服务器的硬盘上</li>
-<li>使用Socket对象中的方法getOutputStream()获取网络字节输出流OutputStream对象</li>
-<li>使用网络字节输出流OutputStream对象中的方法write，给客户端回上传成功</li>
-<li>释放资源（FileOutputStream,Socket,ServerSocket）</li>
-</ol>
-<p><strong>客户端和服务器端无法停止</strong>原因解释：<br>因为read方法当没有东西可以读取会陷入到阻塞状态。<br>客户端的while本地文件读取时不会将结束标记写给服务器，<br>导致服务器端永远也读取不到文件的结束标记，read方法进入到阻塞状态</p>
-<p>解决方案：</p>
-<ul>
-<li> 客户端在上传完文件后，给服务器写一个结束标记<br><code>shutdownOutput()</code> : 禁用此套接字的输出流 ，对于TCP套接字，任何以前写入的数据都将被发送，并且后跟TCP的正常连接终止序列<br>这个函数可以给服务器上传一个结束标记</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class DemoUploadServer &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">        Socket socket = serverSocket.accept();</span><br><span class="line">        InputStream inputStream = socket.getInputStream();</span><br><span class="line">        File file = new File(&quot;D:\\JavaProject\\Server&quot;);</span><br><span class="line">        if (!file.exists())&#123;</span><br><span class="line">            file.mkdirs();</span><br><span class="line">            // 若无文件夹则创建该文件夹</span><br><span class="line">        &#125;</span><br><span class="line">        FileOutputStream fileOutputStream = new FileOutputStream(&quot;D:\\JavaProject\\Server\\beauty.png&quot;);</span><br><span class="line">        // 具体到文件</span><br><span class="line">        byte[] bytes = new byte[1024];</span><br><span class="line">        int len = 0;</span><br><span class="line">        while ((len = inputStream.read(bytes))!=-1)&#123;</span><br><span class="line">            fileOutputStream.write(bytes,0,len);</span><br><span class="line">        &#125;</span><br><span class="line">        OutputStream outputStream = socket.getOutputStream();</span><br><span class="line">        outputStream.write(&quot;文件上传成功&quot;.getBytes());</span><br><span class="line">        fileOutputStream.close();</span><br><span class="line">        socket.close();</span><br><span class="line">        serverSocket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+* 操作Element对象：
+    1. 修改属性值：
+        1. 明确获取的对象是哪一个
+        2. 查看API文档，找该对象有哪些属性可以设置 img.src=...
+    2. 修改标签体内容：
+        * 属性：innerHTML
+        1. 获取元素对象
+        2. 使用innerHTML属性修改标签体内容 title.innerHTML=...
+</code></pre>
+<h2 id="事件简单学习"><a href="#事件简单学习" class="headerlink" title="事件简单学习"></a>事件简单学习</h2><pre><code>* 功能： 某些组件被执行了某些操作后，触发某些代码的执行。
+    * 造句：  xxx被xxx,我就xxx
+        * 我方水晶被摧毁后，我就责备对友。
+        * 敌方水晶被摧毁后，我就夸奖自己。
 
-<h1 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h1><ol>
-<li>添加多线程思路</li>
-<li>使服务器始终处于监听状态，客户端可以一直保持文件的传输</li>
-<li>再添加服务器端存储文件时的名称处理，避免发生文件覆盖<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">public class Demo01Server &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        ServerSocket serverSocket = new ServerSocket(8888);</span><br><span class="line">//        int i = 1;</span><br><span class="line">        /*</span><br><span class="line">        让服务器不再停止，一直处于运行状态，客户端随时上传数据</span><br><span class="line">         */</span><br><span class="line">        while(true)&#123;</span><br><span class="line">            Socket socket = serverSocket.accept();</span><br><span class="line"></span><br><span class="line">//            System.out.println(i);</span><br><span class="line">//            i = i+1;</span><br><span class="line"></span><br><span class="line">            /*</span><br><span class="line">            提高效率可以使用多线程技术，有一个客户端上传文件，就开启一个线程，完成文件的上传.</span><br><span class="line">            同时上传很多文件时，开启多个线程，可以提高效率</span><br><span class="line"></span><br><span class="line">            但是本次socket没有释放，可以直接进入下个循环开启新的线程吗?</span><br><span class="line">            2021.9.14已解决</span><br><span class="line">            经过实验，本次的socket即使没有释放，但只要有新的客户端出现依然可以进入下一个循环，</span><br><span class="line">            即代码逻辑正确，出现新的客户端就开启新的线程，不占用主程序，提高利用率</span><br><span class="line">             */</span><br><span class="line">            new Thread(new Runnable() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    // 抽象的run方法没有声明抛出异常，所以重写方法时不能抛出，要用try catch</span><br><span class="line">                    try &#123;</span><br><span class="line">                        InputStream inputStream = socket.getInputStream();</span><br><span class="line">                        File file = new File(&quot;D:\\JavaProject\\Server&quot;);</span><br><span class="line">                        if (!file.exists())&#123;</span><br><span class="line">                            file.mkdirs();</span><br><span class="line">                            // 若无文件夹则创建该文件夹</span><br><span class="line">                        &#125;</span><br><span class="line">                        String filename = &quot;girl&quot;+System.currentTimeMillis()+new Random().nextInt(99999)+&quot;.png&quot;;</span><br><span class="line">                        FileOutputStream fileOutputStream = new FileOutputStream(file+&quot;\\&quot;+filename);</span><br><span class="line">                        // 具体到文件</span><br><span class="line">                        byte[] bytes = new byte[1024];</span><br><span class="line">                        int len = 0;</span><br><span class="line">                        while ((len = inputStream.read(bytes))!=-1)&#123;</span><br><span class="line">                            fileOutputStream.write(bytes,0,len);</span><br><span class="line">                        &#125;</span><br><span class="line">                        OutputStream outputStream = socket.getOutputStream();</span><br><span class="line">                        outputStream.write(&quot;文件上传成功&quot;.getBytes());</span><br><span class="line">                        fileOutputStream.close();</span><br><span class="line">                        socket.close();</span><br><span class="line">                    &#125;catch (IOException e)&#123;</span><br><span class="line">                        System.out.println(e);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).start();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        //serverSocket.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><img style="width:600px" src="https://img12.360buyimg.com/ddimg/jfs/t1/199636/33/8269/65417/614022aeE0cdb838b/d04ad01b3049d175.png">
+* 如何绑定事件
+    1. 直接在html标签上，指定事件的属性(操作)，属性值就是js代码
+        1. 事件：onclick--- 单击事件
 
-<img style="width:600px" src="https://img11.360buyimg.com/ddimg/jfs/t1/77566/21/16909/107959/6140233fE71163afb/a204cea54d51c0a6.png">
+    2. 通过js获取元素对象，指定事件属性，设置一个函数
+
+    * 代码：
+        &lt;body&gt;
+            &lt;img id=&quot;light&quot; src=&quot;img/off.gif&quot;  onclick=&quot;fun();&quot;&gt; //方法1
+            &lt;img id=&quot;light2&quot; src=&quot;img/off.gif&quot;&gt; // 方法2
+            
+            &lt;script&gt;
+                function fun()&#123;
+                    alert(&#39;我被点了&#39;);
+                    alert(&#39;我又被点了&#39;);
+                &#125;
+            
+                function fun2()&#123;
+                    alert(&#39;咋老点我？&#39;);
+                &#125;
+            
+                //1.获取light2对象
+                var light2 = document.getElementById(&quot;light2&quot;);
+                //2.绑定事件
+                light2.onclick = fun2;
+            
+            
+            &lt;/script&gt;
+        &lt;/body&gt;
+
+        注意什么时候用fun()，什么时候用fun，加引号是&quot;fun()&quot;，不加引号是fun
+        **DOM获取对象必须在对象创建之后才可以获取！！但是方法可以在调用前定义也可以在调用后定义**
+        如果方法之中存在DOM获取对象，那么这个方法最好也是在创建对象之后再调用
+
+* 案例1：电灯开关
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;电灯开关&lt;/title&gt;
+    
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+    &lt;img id=&quot;light&quot; src=&quot;img/off.gif&quot;&gt;
+    
+    &lt;script&gt;
+        /*
+            分析：
+                1.获取图片对象
+                2.绑定单击事件
+                3.每次点击切换图片
+                    * 规则：
+                        * 如果灯是开的 on,切换图片为 off
+                        * 如果灯是关的 off,切换图片为 on
+                    * 使用标记flag来完成
+    
+         */
+    
+        //1.获取图片对象
+        var light = document.getElementById(&quot;light&quot;);
+    
+        var flag = false;//代表灯是灭的。 off图片
+    
+        //2.绑定单击事件
+        light.onclick = function()&#123;
+            if(flag)&#123;//判断如果灯是开的，则灭掉
+                light.src = &quot;img/off.gif&quot;;
+                flag = false;
+    
+            &#125;else&#123;
+                //如果灯是灭的，则打开
+    
+                light.src = &quot;img/on.gif&quot;;
+                flag = true;
+            &#125;
+    
+    
+        &#125;
+        
+    &lt;/script&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+
+
+
+debug需要在浏览器按F12，在console观察错误
+</code></pre>
+<h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM:"></a>BOM:</h1><pre><code>1. 概念：Browser Object Model 浏览器对象模型
+    * 将浏览器的各个组成部分封装成对象。
+
+2. 组成：
+    * Window：窗口对象
+    * Navigator：浏览器对象
+    * Screen：显示器屏幕对象
+    * History：历史记录对象
+    * Location：地址栏对象
+
+    还有一个document对象，因为很重要，单独划分为DOM对象
+
+3. Window：窗口对象
+    1. 创建
+    2. 方法
+         1. 与弹出框有关的方法：
+            alert()    显示带有一段消息和一个确认按钮的警告框。
+            confirm()    显示带有一段消息以及确认按钮和取消按钮的对话框。
+                * 如果用户点击确定按钮，则方法返回true
+                * 如果用户点击取消按钮，则方法返回false
+            prompt()    显示可提示用户输入的对话框。
+                * 返回值：获取用户输入的值
+
+         2. 与打开关闭有关的方法：
+            close()    关闭浏览器窗口。
+                * 谁调用我 ，我关谁
+            open()    打开一个新的浏览器窗口
+                * 返回新的Window对象，可以open(&quot;网址&quot;)
+
+         3. 与定时器有关的方式
+            setTimeout()    在指定的毫秒数后调用函数或计算表达式。
+                * 参数：
+                    1. js代码或者方法对象
+                    2. 毫秒值
+                * 返回值：唯一标识，用于取消定时器
+            clearTimeout()    取消由 setTimeout() 方法设置的 timeout，参数为目标定时器的返回值。
+
+            setInterval()    按照指定的周期（以毫秒计）来调用函数或计算表达式。
+            clearInterval()    取消由 setInterval() 设置的 timeout。
+
+    3. 属性：
+        1. 获取其他BOM对象：
+            history  window.history或者history
+            location
+            Navigator
+            Screen:
+        2. 获取DOM对象
+            document
+    4. 特点
+        * Window对象不需要创建可以直接使用 window使用。 window.方法名();
+        * window引用可以省略。  方法名();
+
+
+4. Location：地址栏对象
+    1. 创建(获取)：
+        1. window.location
+        2. location
+
+    2. 方法：
+        * reload()    重新加载当前文档。刷新
+    3. 属性
+        * href    设置或返回完整的 URL。
+        设计函数触发location.href=&quot;目标网址&quot;，可以进行页面跳转
+
+
+5. History：当前页面的历史记录对象（不是当前浏览器的）
+    1. 创建(获取)：
+        1. window.history
+        2. history
+
+    2. 方法：
+        * back()    加载 history 列表中的前一个 URL。
+        * forward()    加载 history 列表中的下一个 URL。
+        * go(参数)    加载 history 列表中的某个具体页面。
+            * 参数：
+                * 正数：前进几个历史记录
+                * 负数：后退几个历史记录
+    3. 属性：
+        * length    返回当前窗口历史列表中的 URL 数量。
+</code></pre>
+<h2 id="DOM："><a href="#DOM：" class="headerlink" title="DOM："></a>DOM：</h2><pre><code>* 概念： Document Object Model 文档对象模型
+    * 将标记语言文档的各个组成部分，封装为对象。可以使用这些对象，对标记语言文档进行CRUD的动态操作
+
+* W3C DOM 标准被分为 3 个不同的部分：
+
+    * 核心 DOM - 针对任何结构化文档的标准模型
+        * Document：文档对象
+        * Element：元素对象
+        * Attribute：属性对象
+        * Text：文本对象
+        * Comment:注释对象
+
+        * Node：节点对象，其他5个的父对象
+    * XML DOM - 针对 XML 文档的标准模型
+    * HTML DOM - 针对 HTML 文档的标准模型
+
+
+
+
+
+* 核心DOM模型：
+    * Document：文档对象
+        1. 创建(获取)：在html dom模型中可以使用window对象来获取
+            1. window.document
+            2. document
+        2. 方法：
+            1. 获取Element对象：
+                1. getElementById()    ： 根据id属性值获取元素对象。id属性值一般唯一
+                2. getElementsByTagName()：根据元素名称获取元素对象们。返回值是一个数组
+                3. getElementsByClassName():根据Class属性值获取元素对象们。返回值是一个数组
+                4. getElementsByName(): 根据name属性值获取元素对象们。返回值是一个数组
+            2. 创建其他DOM对象：
+                createAttribute(name)
+                createComment()
+                createElement()
+                createTextNode()
+        3. 属性
+
+    * Element：元素对象
+        1. 获取/创建：通过document来获取和创建
+        2. 方法：
+            1. removeAttribute()：删除属性
+            2. setAttribute()：设置属性
+            a.setAttribute(&quot;href&quot;,&quot;https://www.baidu.com&quot;)
+            给a设置一个超链接属性
+            href=&quot;javascript:void(0);&quot;  保留可以被点击的样式，但不可以进行页面跳转
+
+    * Node：节点对象，其他5个的父对象
+        * 特点：**所有dom对象都可以被认为是一个节点**，如表格，行，列，字符串等都是节点
+        * 方法：
+            * CRUD dom树：
+                * appendChild()：向节点的子节点列表的结尾添加新的**子节点**。
+                * removeChild()    ：删除（并返回）当前节点的指定**子节点**。 father.removeChild(child);
+                * replaceChild()：用新节点替换一个子节点。
+        * 属性：
+            * parentNode 返回节点的父节点。
+
+
+* HTML DOM
+    1. 标签体的**设置**和**获取**：innerHTML  &lt;div&gt;111&lt;/div&gt;  div.innerHTML获取的就是111
+    2. 使用html元素对象的属性
+    3. 控制元素样式
+        1. 使用元素的style属性来设置，类似于css
+            如：
+                 //修改样式方式1
+                div1.style.border = &quot;1px solid red&quot;;
+                div1.style.width = &quot;200px&quot;;
+                //font-size--&gt; fontSize
+                div1.style.fontSize = &quot;20px&quot;;
+        2. 提前定义好类选择器的样式，通过元素的className属性来设置其class属性值。
+            div.className = &quot;d1&quot;
+</code></pre>
+<h2 id="事件监听机制："><a href="#事件监听机制：" class="headerlink" title="事件监听机制："></a>事件监听机制：</h2><pre><code>* 概念：某些组件被执行了某些操作后，触发某些代码的执行。    
+    * 事件：某些操作。如： 单击，双击，键盘按下了，鼠标移动了
+    * 事件源：组件。如： 按钮 文本输入框...
+    * 监听器：代码。
+    * 注册监听：将事件，事件源，监听器结合在一起。 当事件源上发生了某个事件，则触发执行某个监听器代码。
+
+
+* 常见的事件：
+    1. 点击事件：
+        1. onclick：单击事件
+        2. ondblclick：双击事件
+    2. 焦点事件
+        1. onblur：失去焦点
+        2. onfocus:元素获得焦点。
+
+    3. 加载事件：
+        1. onload：一张页面或一幅图像完成加载。
+
+    4. 鼠标事件：
+        1. onmousedown    鼠标按钮被按下。
+        2. onmouseup    鼠标按键被松开。
+        3. onmousemove    鼠标被移动。
+        4. onmouseover    鼠标移到某元素之上。
+        5. onmouseout    鼠标从某元素移开。
+        
+        
+    5. 键盘事件：
+        1. onkeydown    某个键盘按键被按下。    
+        2. onkeyup        某个键盘按键被松开。
+        3. onkeypress    某个键盘按键被按下并松开。
+
+    6. 选择和改变
+        1. onchange    域的内容被改变。
+        2. onselect    文本被选中。
+
+    7. 表单事件：
+        1. onsubmit    确认按钮被点击。
+        2. onreset    重置按钮被点击。
+</code></pre>
 
                 
             </div>
@@ -538,7 +799,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://linaaan.githun.io/2021/09/14/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B/">https://linaaan.githun.io/2021/09/14/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E6%A1%88%E4%BE%8B/</a>
+                    <a href="https://linaaan.githun.io/2021/11/16/JavaScript%E8%BF%9B%E9%98%B6/">https://linaaan.githun.io/2021/11/16/JavaScript%E8%BF%9B%E9%98%B6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +837,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                                    <span class="chip bg-color">网络编程</span>
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
                         </div>
@@ -625,43 +886,36 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/09/20/%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/">
+                <a href="/2021/11/16/JavaScript%E8%BF%9B%E9%98%B600/">
                     <div class="card-image">
                         
-                        <img src="https://img14.360buyimg.com/ddimg/jfs/t1/199485/39/9093/1311697/614819adEed66a243/554afe52831fd369.png" class="responsive-img" alt="函数式接口">
                         
-                        <span class="card-title">函数式接口</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript进阶00">
+                        
+                        <span class="card-title">JavaScript进阶00</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            简单写写
+                            这是你自定义的文章摘要内容
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-20
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">Java基础知识</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -673,30 +927,30 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/09/13/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+                <a href="/2021/11/09/JavaScript%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
-                        <img src="https://img14.360buyimg.com/ddimg/jfs/t1/198625/40/8236/1313312/613ef203E436578b1/d663e30aadd4a798.png" class="responsive-img" alt="网络编程">
+                        <img src="https://img14.360buyimg.com/ddimg/jfs/t1/156711/35/24828/3028727/6191183fE54206941/4d680af79496483f.png" class="responsive-img" alt="JavaScript基础">
                         
-                        <span class="card-title">网络编程</span>
+                        <span class="card-title">JavaScript基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            感觉很有用
+                            真的很基础
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category">
-                                    Java
+                            <a href="/categories/JavaWeb/" class="post-category">
+                                    JavaWeb
                                 </a>
                             
                             
@@ -706,8 +960,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">Java基础知识</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
